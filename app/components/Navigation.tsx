@@ -1,17 +1,43 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Navigation() {
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
     const navItems = [
         { href: '/', label: 'HOME' },
-        { href: '/about', label: 'ABOUT' },
-        { href: '/artistic-team', label: 'ARTISTIC TEAM' },
+        {
+            href: '/about',
+            label: 'ABOUT',
+            submenu: [
+                { href: '/about', label: 'About the play' },
+                { href: '/artistic-team', label: 'Artistic Team' }
+            ]
+        },
+        { href: '/tour-dates', label: 'TOUR DATES', comingSoon: true },
+        { href: '/store', label: 'STORE', comingSoon: true },
         { href: '/contact', label: 'CONTACT' },
-        { href: '/info-for-venues', label: 'INFO FOR VENUES' },
-        { href: '/educational-materials', label: 'EDUCATIONAL MATERIALS' },
-        { href: '/tour-dates', label: 'TOUR DATES' },
-        { href: '/store', label: 'STORE' },
-        { href: '/marketing-manual', label: 'MARKETING MANUAL' },
+        {
+            href: '/info-for-venues',
+            label: 'INFO FOR VENUES',
+            submenu: [
+                { href: '/info-for-venues', label: 'Tech Specs' },
+                { href: '/educational-materials', label: 'Educational Materials' },
+                { href: '/marketing-manual', label: 'Marketing Manual', comingSoon: true },
+                { href: '/sample-video', label: 'Sample Video' }
+            ]
+        }
     ];
+
+    const handleMouseEnter = (label: string) => {
+        setOpenDropdown(label);
+    };
+
+    const handleMouseLeave = () => {
+        setOpenDropdown(null);
+    };
 
     return (
         <nav className="w-full bg-white shadow-sm border-b border-gray-200">
@@ -27,13 +53,53 @@ export default function Navigation() {
                     {/* Navigation Links */}
                     <div className="hidden md:flex space-x-8">
                         {navItems.map((item) => (
-                            <Link
+                            <div
                                 key={item.href}
-                                href={item.href}
-                                className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium"
+                                className="relative"
+                                onMouseEnter={() => item.submenu && handleMouseEnter(item.label)}
+                                onMouseLeave={handleMouseLeave}
                             >
-                                {item.label}
-                            </Link>
+                                {item.submenu ? (
+                                    // Parent items with submenus - not clickable, just show dropdown
+                                    <button
+                                        className={`text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-bold flex items-center cursor-default ${item.comingSoon ? 'opacity-60' : ''
+                                            }`}
+                                    >
+                                        {item.label}
+                                        <svg className="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                        </svg>
+                                    </button>
+                                ) : (
+                                    // Regular menu items - clickable links
+                                    <Link
+                                        href={item.href}
+                                        className={`text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-bold flex items-center ${item.comingSoon ? 'opacity-60' : ''
+                                            }`}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                )}
+
+                                {/* Dropdown Menu */}
+                                {item.submenu && openDropdown === item.label && (
+                                    <div className="absolute left-0 mt-0 w-64 bg-white shadow-lg border border-gray-200 rounded-md z-50">
+                                        <div className="py-2">
+                                            {item.submenu.map((subItem) => (
+                                                <Link
+                                                    key={subItem.href}
+                                                    href={subItem.href}
+                                                    className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 ${subItem.comingSoon ? 'opacity-60' : ''
+                                                        }`}
+                                                >
+                                                    {subItem.label}
+                                                    {subItem.comingSoon && <span className="text-xs text-gray-500 ml-2">(coming soon)</span>}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </div>
 

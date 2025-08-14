@@ -4,7 +4,7 @@ export default function EducationalMaterials() {
             <div className="space-y-8">
                 {/* Page Header */}
                 <div className="max-w-3xl">
-                    <h1 className="text-4xl font-bold mb-8">EDUCATIONAL MATERIALS</h1>
+                    <h1 className="text-4xl font-bold mb-8">Educational Materials</h1>
                 </div>
 
                 {/* Educational Information */}

@@ -4,13 +4,10 @@ export default function InfoForVenues() {
             <div className="space-y-8">
                 {/* Page Header */}
                 <div className="max-w-3xl">
-                    <h1 className="text-4xl font-bold mb-8">INFO FOR VENUES</h1>
+                    <h1 className="text-4xl font-bold mb-8">Tech Specs</h1>
                 </div>
 
-                {/* Tech Specs Title */}
-                <div className="max-w-3xl">
-                    <h2 className="text-3xl font-bold mb-6">Tech Specs</h2>
-                </div>
+
 
                 {/* Basic Information */}
                 <div className="max-w-3xl">
@@ -18,7 +15,7 @@ export default function InfoForVenues() {
                     <ol className="list-decimal list-inside space-y-3 text-lg leading-relaxed">
                         <li>Treasure Island Reimaged (TIR) will arrive with road cases by van or from the airport. The company provides the equipment for sound effects and a laptop for the projections.</li>
                         <li>The TIR crew will consist of two people: one company manager/technical director and one driver/merch salesperson. It is not a yellow card crew.</li>
-                        <li>Total time for load in and tech: 4–5 hours, plus venue prehang and setup before company's arrival. Strike and load out will take 2 hours at most.</li>
+                        <li>Total time for load in and tech: 4-5 hours, plus venue prehang and setup before company's arrival. Strike and load out will take 2 hours at most.</li>
                     </ol>
                 </div>
 

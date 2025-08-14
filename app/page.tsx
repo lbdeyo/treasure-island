@@ -11,8 +11,8 @@ export default function Home() {
 
         {/* Title and Director */}
         <div className="max-w-3xl">
-          <h1 className="text-5xl font-bold mb-4">Treasure Island Reimagined</h1>
-          <h2 className="text-2xl text-gray-700 mb-2">Jane Hawkins and the Pirate's Gold</h2>
+          <h1 className="font-bold mb-1" style={{ fontSize: '4rem', lineHeight: '1.1' }}>Treasure Island Reimagined</h1>
+          <h2 className="text-2xl text-gray-700 mb-2 font-bold">Jane Hawkins and the Pirate's Gold</h2>
           <p className="text-lg text-gray-600">Written and Directed by Jason Neulander</p>
         </div>
 
