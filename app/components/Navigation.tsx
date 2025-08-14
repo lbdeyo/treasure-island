@@ -5,6 +5,8 @@ import { useState } from 'react';
 
 export default function Navigation() {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null);
 
     const navItems = [
         { href: '/', label: 'HOME' },
@@ -103,9 +105,12 @@ export default function Navigation() {
                         ))}
                     </div>
 
-                    {/* Mobile menu button placeholder */}
+                    {/* Mobile menu button */}
                     <div className="md:hidden">
-                        <button className="text-gray-700 hover:text-gray-900">
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="text-gray-700 hover:text-gray-900"
+                        >
                             <span className="sr-only">Open main menu</span>
                             <div className="w-6 h-6 flex flex-col justify-center">
                                 <span className="block w-full h-0.5 bg-current mb-1"></span>
@@ -116,6 +121,64 @@ export default function Navigation() {
                     </div>
                 </div>
             </div>
+
+            {/* Mobile menu panel */}
+            {mobileMenuOpen && (
+                <div className="md:hidden border-t border-gray-200">
+                    <div className="px-2 pt-2 pb-3 space-y-1">
+                        {navItems.map((item) => (
+                            <div key={item.href}>
+                                {item.submenu ? (
+                                    <div>
+                                        <button
+                                            onClick={() => setMobileSubmenuOpen(
+                                                mobileSubmenuOpen === item.label ? null : item.label
+                                            )}
+                                            className={`w-full text-left px-3 py-2 text-base font-bold text-gray-700 hover:text-gray-900 hover:bg-gray-50 flex items-center justify-between ${item.comingSoon ? 'opacity-60' : ''
+                                                }`}
+                                        >
+                                            {item.label}
+                                            <svg
+                                                className={`h-5 w-5 transform transition-transform ${mobileSubmenuOpen === item.label ? 'rotate-180' : ''
+                                                    }`}
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                            </svg>
+                                        </button>
+                                        {mobileSubmenuOpen === item.label && (
+                                            <div className="pl-4">
+                                                {item.submenu.map((subItem) => (
+                                                    <Link
+                                                        key={subItem.href}
+                                                        href={subItem.href}
+                                                        onClick={() => setMobileMenuOpen(false)}
+                                                        className={`block px-3 py-2 text-base text-gray-600 hover:text-gray-900 hover:bg-gray-50 ${subItem.comingSoon ? 'opacity-60' : ''
+                                                            }`}
+                                                    >
+                                                        {subItem.label}
+                                                        {subItem.comingSoon && <span className="text-xs text-gray-500 ml-2">(coming soon)</span>}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <Link
+                                        href={item.href}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className={`block px-3 py-2 text-base font-bold text-gray-700 hover:text-gray-900 hover:bg-gray-50 ${item.comingSoon ? 'opacity-60' : ''
+                                            }`}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
         </nav>
     );
 }
