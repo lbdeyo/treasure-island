@@ -24,7 +24,7 @@ export default function ArtisticTeam() {
                         <div>
                             <h2 className="text-2xl font-bold mb-4">Jason Neulander</h2>
                             <p className="text-lg leading-relaxed">
-                                Jason Neulander is an award-winning author, filmmaker, and theater artist based in Austin, Texas. He has directed and produced more than 50 projects. His play The Intergalactic Nemesis toured to more than 200 venues around the world between 2010 and 2017, including runs on Broadway and sold-out performances at the Kennedy Center, was featured on CONAN, and was adapted for television by PBS. His debut feature film Fugitive Dreams (2024) (100% Fresh on Rotten Tomatoes) is available to stream across all platforms.
+                                Jason Neulander is an award-winning author, filmmaker, and theater artist based in Austin, Texas. He has directed and produced more than 50 projects. His play <i> The Intergalactic Nemesis</i> toured to more than 200 venues around the world between 2010 and 2017, including runs on Broadway and sold-out performances at the Kennedy Center, was featured on CONAN, and was adapted for television by PBS. His debut feature film <i>Fugitive Dreams</i> (2024) (100% Fresh on Rotten Tomatoes) is available to stream across all platforms.
                             </p>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ export default function ArtisticTeam() {
                         <div>
                             <h2 className="text-2xl font-bold mb-4">Johnny Dombrowski</h2>
                             <p className="text-lg leading-relaxed">
-                                Johnny Dombrowski is an award winning illustrator living in Brooklyn, NY, creating comics and illustrations older than he is. He's worked for clients including Activision, Universal Pictures, StudioCanal, Mutant, Mondo, Jack White, Phish, New York Times, The New Yorker, Epic Games, and many more. You can find more of his work at johnnydombrowski.com or @jdombrowski on all social media platforms.
+                                Johnny Dombrowski is an award winning illustrator living in Brooklyn, NY, creating comics and illustrations older than he is. He's worked for clients including Activision, Universal Pictures, StudioCanal, Mutant, Mondo, Jack White, Phish, New York Times, The New Yorker, Epic Games, and many more. You can find more of his work at <a href="mailto:johnnydombrowski@gmail.com" className="text-blue-500 hover:text-blue-600">johnnydombrowski@gmail.com</a> or <a href="https://www.instagram.com/jdombrowski/" className="text-blue-500 hover:text-blue-600">@jdombrowski</a> on all social media platforms.
                             </p>
                         </div>
                     </div>
