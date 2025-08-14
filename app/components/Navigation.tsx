@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Navigation() {
@@ -9,7 +10,6 @@ export default function Navigation() {
     const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null);
 
     const navItems = [
-        { href: '/', label: 'HOME' },
         {
             href: '/about',
             label: 'ABOUT',
@@ -44,16 +44,21 @@ export default function Navigation() {
     return (
         <nav className="w-full bg-white shadow-sm border-b border-gray-200">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
-                    {/* Logo placeholder */}
+                <div className="flex items-center h-16">
+                    {/* Logo */}
                     <Link href="/" className="flex items-center">
-                        <div className="w-12 h-12 bg-gray-200 rounded flex items-center justify-center">
-                            <span className="text-xs font-bold">LOGO</span>
-                        </div>
+                        <Image
+                            src="/img/nav-logo.png"
+                            alt="Treasure Island Reimagined Logo"
+                            width={48}
+                            height={48}
+                            className="h-12 w-auto"
+                            priority
+                        />
                     </Link>
 
                     {/* Navigation Links */}
-                    <div className="hidden md:flex space-x-8">
+                    <div className="hidden md:flex space-x-8 ml-8">
                         {navItems.map((item) => (
                             <div
                                 key={item.href}
@@ -106,7 +111,7 @@ export default function Navigation() {
                     </div>
 
                     {/* Mobile menu button */}
-                    <div className="md:hidden">
+                    <div className="md:hidden ml-auto">
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             className="text-gray-700 hover:text-gray-900"
