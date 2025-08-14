@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -11,9 +13,15 @@ export default function Home() {
 
         {/* Title and Director */}
         <div className="max-w-3xl">
-          <h1 className="font-bold mb-1" style={{ fontSize: '4rem', lineHeight: '1.1' }}>Treasure Island Reimagined</h1>
-          <h2 className="text-2xl text-gray-700 mb-2 font-bold">Jane Hawkins and the Pirate's Gold</h2>
-          <p className="text-lg text-gray-600">Written and Directed by Jason Neulander</p>
+          <Image
+            src="/img/home-header.png"
+            alt="Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold"
+            width={800}
+            height={200}
+            className="mb-2"
+            priority
+          />
+          <p className="text-lg text-gray-600 font-bold">Written and Directed by Jason Neulander</p>
         </div>
 
         {/* Main Description */}
