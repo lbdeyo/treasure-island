@@ -18,7 +18,7 @@ export default function ArtisticTeam() {
                                 alt="Jason Neulander"
                                 width={200}
                                 height={200}
-                                className="rounded-lg object-cover"
+                                className="border-5 border-black object-cover"
                             />
                         </div>
                         <div>
@@ -39,7 +39,7 @@ export default function ArtisticTeam() {
                                 alt="Johnny Dombrowski"
                                 width={200}
                                 height={200}
-                                className="rounded-lg object-cover"
+                                className="border-5 border-black object-cover"
                             />
                         </div>
                         <div>
@@ -60,7 +60,7 @@ export default function ArtisticTeam() {
                                 alt="Sam Lipman"
                                 width={200}
                                 height={200}
-                                className="rounded-lg object-cover"
+                                className="border-5 border-black object-cover"
                             />
                         </div>
                         <div>

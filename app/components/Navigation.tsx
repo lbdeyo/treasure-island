@@ -42,148 +42,146 @@ export default function Navigation() {
     };
 
     return (
-        <nav className="w-full bg-white shadow-sm border-b border-gray-200">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center h-16">
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center">
-                        <Image
-                            src="/img/nav-logo.png"
-                            alt="Treasure Island Reimagined Logo"
-                            width={48}
-                            height={48}
-                            className="h-12 w-auto"
-                            priority
-                        />
-                    </Link>
+        <div className="w-full relative z-[100]" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))' }}>
+            <nav className="w-full bg-[url('/img/art/nav-bg.jpg')] bg-repeat bg-center">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
+                    <div className="flex items-center h-16">
+                        {/* Logo */}
+                        <Link href="/" className="flex items-center">
+                            <Image
+                                src="/img/nav-logo.png"
+                                alt="Treasure Island Reimagined Logo"
+                                width={48}
+                                height={48}
+                                className="h-12 w-auto"
+                                priority
+                            />
+                        </Link>
 
-                    {/* Navigation Links */}
-                    <div className="hidden md:flex space-x-8 ml-8">
-                        {navItems.map((item) => (
-                            <div
-                                key={item.href}
-                                className="relative"
-                                onMouseEnter={() => item.submenu && handleMouseEnter(item.label)}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                {item.submenu ? (
-                                    // Parent items with submenus - not clickable, just show dropdown
-                                    <button
-                                        className={`text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-bold flex items-center cursor-default ${item.comingSoon ? 'opacity-60' : ''
-                                            }`}
-                                    >
-                                        {item.label}
-                                        <svg className="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                                        </svg>
-                                    </button>
-                                ) : (
-                                    // Regular menu items - clickable links
-                                    <Link
-                                        href={item.href}
-                                        className={`text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-bold flex items-center ${item.comingSoon ? 'opacity-60' : ''
-                                            }`}
-                                    >
-                                        {item.label}
-                                    </Link>
-                                )}
-
-                                {/* Dropdown Menu */}
-                                {item.submenu && openDropdown === item.label && (
-                                    <div className="absolute left-0 mt-0 w-64 bg-white shadow-lg border border-gray-200 rounded-md z-50">
-                                        <div className="py-2">
-                                            {item.submenu.map((subItem) => (
-                                                <Link
-                                                    key={subItem.href}
-                                                    href={subItem.href}
-                                                    className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 ${subItem.comingSoon ? 'opacity-60' : ''
-                                                        }`}
-                                                >
-                                                    {subItem.label}
-                                                    {subItem.comingSoon && <span className="text-xs text-gray-500 ml-2">(coming soon)</span>}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Mobile menu button */}
-                    <div className="md:hidden ml-auto">
-                        <button
-                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="text-gray-700 hover:text-gray-900"
-                        >
-                            <span className="sr-only">Open main menu</span>
-                            <div className="w-6 h-6 flex flex-col justify-center">
-                                <span className="block w-full h-0.5 bg-current mb-1"></span>
-                                <span className="block w-full h-0.5 bg-current mb-1"></span>
-                                <span className="block w-full h-0.5 bg-current"></span>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {/* Mobile menu panel */}
-            {mobileMenuOpen && (
-                <div className="md:hidden border-t border-gray-200">
-                    <div className="px-2 pt-2 pb-3 space-y-1">
-                        {navItems.map((item) => (
-                            <div key={item.href}>
-                                {item.submenu ? (
-                                    <div>
+                        {/* Navigation Links */}
+                        <div className="hidden md:flex space-x-8 ml-8">
+                            {navItems.map((item) => (
+                                <div
+                                    key={item.href}
+                                    className="relative"
+                                    onMouseEnter={() => item.submenu && handleMouseEnter(item.label)}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    {item.submenu ? (
+                                        // Parent items with submenus - not clickable, just show dropdown
                                         <button
-                                            onClick={() => setMobileSubmenuOpen(
-                                                mobileSubmenuOpen === item.label ? null : item.label
-                                            )}
-                                            className={`w-full text-left px-3 py-2 text-base font-bold text-gray-700 hover:text-gray-900 hover:bg-gray-50 flex items-center justify-between ${item.comingSoon ? 'opacity-60' : ''
-                                                }`}
+                                            className={`text-black hover:text-black px-3 py-2 text-base font-bold flex items-center cursor-default `}
                                         >
                                             {item.label}
-                                            <svg
-                                                className={`h-5 w-5 transform transition-transform ${mobileSubmenuOpen === item.label ? 'rotate-180' : ''
-                                                    }`}
-                                                fill="currentColor"
-                                                viewBox="0 0 20 20"
-                                            >
+                                            <svg className="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                             </svg>
                                         </button>
-                                        {mobileSubmenuOpen === item.label && (
-                                            <div className="pl-4">
+                                    ) : (
+                                        // Regular menu items - clickable links
+                                        <Link
+                                            href={item.href}
+                                            className={`text-black hover:text-black px-3 py-2 text-base font-bold flex items-center `}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    )}
+
+                                    {/* Dropdown Menu */}
+                                    {item.submenu && openDropdown === item.label && (
+                                        <div className="absolute left-0 mt-0 w-64 bg-white shadow-lg border border-gray-200 rounded-md z-[200]">
+                                            <div className="py-2">
                                                 {item.submenu.map((subItem) => (
                                                     <Link
                                                         key={subItem.href}
                                                         href={subItem.href}
-                                                        onClick={() => setMobileMenuOpen(false)}
-                                                        className={`block px-3 py-2 text-base text-gray-600 hover:text-gray-900 hover:bg-gray-50 ${subItem.comingSoon ? 'opacity-60' : ''
-                                                            }`}
+                                                        className={`block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-black `}
                                                     >
                                                         {subItem.label}
-                                                        {subItem.comingSoon && <span className="text-xs text-gray-500 ml-2">(coming soon)</span>}
+                                                        {subItem.comingSoon && <span className="text-xs text-black ml-2">(coming soon)</span>}
                                                     </Link>
                                                 ))}
                                             </div>
-                                        )}
-                                    </div>
-                                ) : (
-                                    <Link
-                                        href={item.href}
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className={`block px-3 py-2 text-base font-bold text-gray-700 hover:text-gray-900 hover:bg-gray-50 ${item.comingSoon ? 'opacity-60' : ''
-                                            }`}
-                                    >
-                                        {item.label}
-                                    </Link>
-                                )}
-                            </div>
-                        ))}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Mobile menu button */}
+                        <div className="md:hidden ml-auto">
+                            <button
+                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                                className="text-black hover:text-black"
+                            >
+                                <span className="sr-only">Open main menu</span>
+                                <div className="w-6 h-6 flex flex-col justify-center">
+                                    <span className="block w-full h-0.5 bg-current mb-1"></span>
+                                    <span className="block w-full h-0.5 bg-current mb-1"></span>
+                                    <span className="block w-full h-0.5 bg-current"></span>
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            )}
-        </nav>
+
+                {/* Mobile menu panel */}
+                {
+                    mobileMenuOpen && (
+                        <div className="md:hidden border-t border-gray-200">
+                            <div className="px-2 pt-2 pb-3 space-y-1">
+                                {navItems.map((item) => (
+                                    <div key={item.href}>
+                                        {item.submenu ? (
+                                            <div>
+                                                <button
+                                                    onClick={() => setMobileSubmenuOpen(
+                                                        mobileSubmenuOpen === item.label ? null : item.label
+                                                    )}
+                                                    className={`w-full text-left px-3 py-2 text-base font-bold text-black hover:text-black hover:bg-gray-50 flex items-center justify-between `}
+                                                >
+                                                    {item.label}
+                                                    <svg
+                                                        className={`h-5 w-5 transform transition-transform ${mobileSubmenuOpen === item.label ? 'rotate-180' : ''
+                                                            }`}
+                                                        fill="currentColor"
+                                                        viewBox="0 0 20 20"
+                                                    >
+                                                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                    </svg>
+                                                </button>
+                                                {mobileSubmenuOpen === item.label && (
+                                                    <div className="pl-4">
+                                                        {item.submenu.map((subItem) => (
+                                                            <Link
+                                                                key={subItem.href}
+                                                                href={subItem.href}
+                                                                onClick={() => setMobileMenuOpen(false)}
+                                                                className={`block px-3 py-2 text-base text-black hover:text-black hover:bg-gray-50 `}
+                                                            >
+                                                                {subItem.label}
+                                                                {subItem.comingSoon && <span className="text-xs text-black ml-2">(coming soon)</span>}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ) : (
+                                            <Link
+                                                href={item.href}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className={`block px-3 py-2 text-base font-bold text-black  hover:bg-gray-50 `}
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )
+                }
+            </nav>
+        </div>
     );
 }
