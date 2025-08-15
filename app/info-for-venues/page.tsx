@@ -4,10 +4,8 @@ export default function InfoForVenues() {
             <div className="space-y-8">
                 {/* Page Header */}
                 <div className="max-w-3xl">
-                    <h1 className="text-4xl font-bold mb-8">Tech Specs</h1>
+                    <h1 className=" mb-8">Tech Specs</h1>
                 </div>
-
-
 
                 {/* Basic Information */}
                 <div className="max-w-3xl">

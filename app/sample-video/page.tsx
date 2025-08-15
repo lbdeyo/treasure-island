@@ -4,7 +4,7 @@ export default function SampleVideo() {
             <div className="space-y-8">
                 {/* Page Header */}
                 <div className="max-w-3xl">
-                    <h1 className="text-4xl font-bold mb-8">Sample Video</h1>
+                    <h1 className=" mb-8">Sample Video</h1>
                 </div>
 
                 {/* Coming Soon */}

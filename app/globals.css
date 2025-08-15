@@ -31,9 +31,18 @@ body {
 /* Use TerraIgnota for h1 headings only */
 h1 {
   font-family: 'TerraIgnota', serif;
-  font-size: 3.75rem;
-  /* 60px - perfect balance between impact and readability */
-  line-height: 1.1;
+  font-size: 7rem;
+  /* 112px - large and impactful */
+  line-height: 0.9;
+  margin-top: -2.5rem;
+  color: #8f181c;
+}
+
+/* Responsive line-height for h1 on larger screens */
+@media (min-width: 768px) {
+  h1 {
+    line-height: 1.1;
+  }
 }
 
 /* Everything else (including h2) uses EB Garamond (inherited from body) */
