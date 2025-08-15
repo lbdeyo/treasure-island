@@ -66,7 +66,7 @@ export default function ArtisticTeam() {
                         <div>
                             <h2 className="text-2xl font-bold mb-4">Sam Lipman</h2>
                             <p className="text-lg leading-relaxed">
-                                Sam Lipman is an award-winning composer whose works have been performed by the New Jersey Symphony Orchestra, at Carnegie Hall, and Lincoln Center. His recent Unbroken Call—the first-ever commission by the Austin Symphony Orchestra—premiered with featured soloist Giveton Gelin of Jon Batiste's group, earning multiple standing ovations. His orchestral ballet MoonFall sold out its two-week premiere and earned 12 award nominations. Lipman has composed for film, including Terrence Malick and Richard Linklater, and teaches Film Scoring at the University of Texas.
+                                Sam Lipman is an award-winning composer whose works have been performed by the New Jersey Symphony Orchestra, at Carnegie Hall, and Lincoln Center. His recent <i>Unbroken Call</i>—the first-ever commission by the Austin Symphony Orchestra—premiered with featured soloist Giveton Gelin of Jon Batiste's group, earning multiple standing ovations. His orchestral ballet <i>MoonFall</i> sold out its two-week premiere and earned 12 award nominations. Lipman has composed for film, including Terrence Malick and Richard Linklater, and teaches Film Scoring at the University of Texas.
                             </p>
                         </div>
                     </div>
