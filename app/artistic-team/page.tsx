@@ -4,7 +4,7 @@ export default function ArtisticTeam() {
     return (
         <div className=" bg-[url('/img/art/long-john-parchment-burn.jpg')] bg-cover bg-top">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5  ">
-                <div className="bg-[url('/img/art/paper-light.jpg')] bg-cover bg-top max-w-3xl border-black border-5">
+                <div className="bg-[url('/img/art/paper-light.jpg')] bg-cover bg-top max-w-3xl shadow-lg shadow-black">
                     <div className="space-y-8 max-w-3xl p-5">
                         {/* Page Header */}
                         <div className="max-w-2xl mt-6">
