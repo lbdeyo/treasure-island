@@ -4,7 +4,7 @@ export default function SampleVideo() {
             <div className="space-y-8">
                 {/* Page Header */}
                 <div className="max-w-3xl">
-                    <h1 className=" mb-8">Sample Video</h1>
+                    <h1 className=" mb-8" style={{ fontSize: '5rem' }}>Sample Video</h1>
                 </div>
 
                 {/* Coming Soon */}
@@ -19,7 +19,6 @@ export default function SampleVideo() {
                             title="Treasure Island Reimagined- demo video"
                         />
                     </div>
-                    <p className="text-lg leading-relaxed">Coming soon.</p>
                 </div>
             </div>
         </div>
