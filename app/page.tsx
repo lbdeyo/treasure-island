@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className=" bg-[url('/img/art/p18.jpg')] bg-cover">
+    <div className=" bg-[url('/img/art/home-bg.jpg')] bg-cover bg-[xl]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8  ">
         <div className="space-y-5">
           {/* Production Credits */}
@@ -13,7 +13,7 @@ export default function Home() {
           </div>
 
           {/* Title and Director */}
-          <div className="max-w-3xl bg-[url('/img/art/paper.jpg')] bg-cover p-5 border border-6 border-black" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))' }}>
+          <div className="max-w-3xl bg-[url('/img/art/paper-light.jpg')] bg-cover p-5 border border-6 border-black lg:ml-14" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))' }}>
             <Image
               src="/img/home-header.png"
               alt="Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold"
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
 
           {/* Main Description */}
-          <div className="max-w-3xl text-2xl text-white bg-[#B02025] p-5 mb-8 border border-6 border-black " style={{ filter: 'drop-shadow(0 4px 8px rgba(219, 220, 169, 0.4))' }}>
+          <div className="max-w-3xl text-2xl text-white bg-[#4b4f19]  p-5 mb-8 border border-6 border-black " style={{ filter: 'drop-shadow(0 4px 8px rgba(219, 220, 169, 0.4))' }}>
             <p className=" leading-relaxed mb-6">
               <span className="float-left text-9xl mr-2 -mt-4">S</span>lated to begin touring in the Fall of 2026, <strong>Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold</strong> is Jason Neulander's newest "live-action graphic novel." In this adaptation of Robert Louis Stevenson's classic, four performers provide all the voices, sound effects, and cinematic score - live and in front of your eyes - in front of a huge screen to tell an on-the-edge-of-your-seat tale of danger and adventure for the kid in everyone.
             </p>

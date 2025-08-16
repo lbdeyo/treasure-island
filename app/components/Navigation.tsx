@@ -43,7 +43,7 @@ export default function Navigation() {
 
     return (
         <div className="w-full relative z-[100]" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))' }}>
-            <nav className="w-full bg-[url('/img/art/paper.jpg')] bg-[length:800px_800px] bg-repeat">
+            <nav className="w-full bg-[url('/img/art/paper-light.jpg')]  bg-repeat">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
                     <div className="flex items-center h-16">
                         {/* Logo */}
