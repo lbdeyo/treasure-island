@@ -1,9 +1,9 @@
 export default function EducationalMaterials() {
     return (
-        <div className="bg-[url('/img/art/ed-materials-bg.jpg')] bg-cover">
+        <div className="bg-[url('/img/art/ed-materials-bg.jpg')] md:bg-cover ">
 
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 ">
-                <div className="max-w-3xl p-7 bg-[url('/img/art/paper-light.jpg')] bg-top bg-repeat bg-[length:1000px_auto] border border-6 border-black">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-12 ">
+                <div className="max-w-3xl p-7 bg-[url('/img/art/paper-light.jpg')] bg-top bg-repeat bg-[length:1000px_auto] shadow-lg shadow-black">
                     <div className="space-y-8">
                         {/* Page Header */}
                         <div className="max-w-3xl mt-8">

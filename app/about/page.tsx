@@ -11,8 +11,6 @@ export default function About() {
                     </div>
 
 
-
-
                     {/* Main Description */}
                     <div className="flex flex-col lg:flex-row lg:gap-12 lg:items-start">
                         <div className="max-w-3xl flex-1">
