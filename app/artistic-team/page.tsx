@@ -3,15 +3,15 @@ import Image from "next/image";
 export default function ArtisticTeam() {
     return (
         <div className=" bg-[url('/img/art/long-john-flipped.jpg')] bg-cover bg-top">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
-                <div className="space-y-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8  ">
+                <div className="space-y-8 max-w-3xl p-4 bg-[#BFAB88]">
                     {/* Page Header */}
-                    <div className="max-w-3xl">
+                    <div className="max-w-3xl mt-6">
                         <h1>Artistic Team</h1>
                     </div>
 
                     {/* Jason Neulander */}
-                    <div className="max-w-3xl bg-[#EDC397] p-3 border-5 border-black">
+                    <div className="max-w-3xl ">
                         <div className="flex flex-col md:flex-row md:gap-6 mb-8">
                             <div className="mb-4 md:mb-0 md:flex-shrink-0">
                                 <Image
@@ -34,7 +34,7 @@ export default function ArtisticTeam() {
                     </div>
 
                     {/* Johnny Dombrowski */}
-                    <div className="max-w-3xl bg-[#BFAB88] p-4 border-5 border-black">
+                    <div className="max-w-3xl ">
                         <div className="flex flex-col md:flex-row md:gap-6 mb-8">
                             <div className="mb-4 md:mb-0 md:flex-shrink-0">
                                 <Image
@@ -56,7 +56,7 @@ export default function ArtisticTeam() {
                     </div>
 
                     {/* Sam Lipman */}
-                    <div className="max-w-3xl bg-[#CEA680] p-4 border-5 border-black">
+                    <div className="max-w-3xl  ">
                         <div className="flex flex-col md:flex-row md:gap-6 mb-8">
                             <div className="mb-4 md:mb-0 md:flex-shrink-0">
                                 <Image
@@ -78,7 +78,7 @@ export default function ArtisticTeam() {
                         </div>
                     </div>
                     {/* Lee Duhig */}
-                    <div className="max-w-3xl bg-[#D79975] p-3 border-5 border-black">
+                    <div className="max-w-3xl ">
                         <div className="flex flex-col md:flex-row md:gap-6 mb-8">
                             <div className="mb-4 md:mb-0 md:flex-shrink-0">
                                 <Image
