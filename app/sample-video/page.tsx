@@ -9,6 +9,16 @@ export default function SampleVideo() {
 
                 {/* Coming Soon */}
                 <div className="max-w-3xl">
+                    <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+                        <iframe
+                            src="https://player.vimeo.com/video/1108447276?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            frameBorder="0"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                            title="Treasure Island Reimagined- demo video"
+                        />
+                    </div>
                     <p className="text-lg leading-relaxed">Coming soon.</p>
                 </div>
             </div>
