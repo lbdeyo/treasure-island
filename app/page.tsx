@@ -7,7 +7,7 @@ export default function Home() {
         <div className="space-y-5">
           {/* Production Credits */}
           <div className="max-w-3xl bg-[#D4D6AD] p-5 border border-6 border-black" style={{ filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))' }}>
-            <p className="text-2xl text-black leading-relaxed font-['TerraIgnota']" >
+            <p className="text-lg md:text-2xl text-black leading-tight md:leading-relaxed font-['TerraIgnota']" >
               Chemistry Laboratories and Shaw Entertainment Group Present • A Jason Neulander Production • Treasure Island Reimagined • Sound effects designed by Buzz Moran • Music by Sam Lipman • Art by Johnny Dombrowski • Produced by Jason Neulander and Simon Shaw
             </p>
           </div>
