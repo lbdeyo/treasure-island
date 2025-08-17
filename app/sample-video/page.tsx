@@ -16,7 +16,7 @@ export default function SampleVideo() {
                             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
                             style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                            title="Treasure Island Reimagined- demo video"
+                            title="Treasure Island Reimagined - demo video"
                         />
                     </div>
                 </div>
