@@ -4,7 +4,7 @@ export default function ArtisticTeam() {
     return (
         <div className=" bg-[url('/img/art/long-john-parchment-burn.jpg')] bg-cover bg-top bg-[min-height:100vh]">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5  ">
-                <div className="max-w-3xl bg-[#D4D6AD] p-5 mb-6 border-3 border-black" style={{ filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))' }}>
+                <div className="max-w-3xl bg-[#D4D6AD] p-5 mb-6 border-3 border-black" >
                     <p className="text-lg md:text-xl text-black leading-tight  ">
                         Chemistry Laboratories and Shaw Entertainment Group Present • A Jason Neulander Production • Treasure Island Reimagined • Sound effects designed by Buzz Moran • Music by Sam Lipman • Art by Johnny Dombrowski • Produced by Jason Neulander and Simon Shaw
                     </p>
