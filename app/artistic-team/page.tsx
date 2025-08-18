@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ArtisticTeam() {
     return (
-        <div className=" bg-[url('/img/art/long-john-parchment-burn.jpg')] bg-cover bg-top">
+        <div className=" bg-[url('/img/art/long-john-parchment-burn.jpg')] bg-cover bg-top bg-[min-height:100vh]">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5  ">
                 <div className="max-w-3xl bg-[#D4D6AD] p-5 mb-6 border-3 border-black" style={{ filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))' }}>
                     <p className="text-lg md:text-xl text-black leading-tight  ">
@@ -10,13 +10,12 @@ export default function ArtisticTeam() {
                     </p>
                 </div>
                 <div className="relative max-w-3xl p-5 bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black">
-                    {/* <div aria-hidden className="absolute inset-0 z-0 pointer-events-none bg-[url('/img/torn-paper-mask-2.png')] [background-size:100%_100%] bg-no-repeat opacity-50 [filter:blur(28px)_brightness(0.2)] transform translate-y-[5px] scale-[1.015]"></div>
-                    <div aria-hidden className="absolute inset-0 z-10 pointer-events-none bg-[url('/img/art/paper-light.jpg')] bg-top bg-repeat bg-[length:1000px_auto] [mask-image:url('/img/torn-paper-mask-2.png')] [mask-size:100%_100%] [-webkit-mask-image:url('/img/torn-paper-mask-2.png')] [-webkit-mask-size:100%_100%] [mask-repeat:no-repeat] [-webkit-mask-repeat:no-repeat]"></div> */}
+
                     <div className="relative z-20">
 
                         <div className="space-y-8 max-w-3xl p-5">
                             {/* Page Header */}
-                            <div className="max-w-2xl mt-6">
+                            <div className="max-w-2xl mt-3">
                                 <h1>Artistic Team</h1>
                             </div>
 

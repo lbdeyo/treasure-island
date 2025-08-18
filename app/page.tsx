@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className=" bg-[url('/img/art/home-bg.jpg')] bg-cover ">
+    <div className=" bg-[url('/img/art/home-background.jpg')] bg-cover ">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8  ">
         <div className="grid gap-6 md:grid-cols-12">
           {/* Title and Director */}
@@ -22,23 +22,12 @@ export default function Home() {
           <div className="md:col-span-5 md:col-start-8 space-y-5">
             {/* Production Credits (moved into right column) */}
 
-            {/* Home Header (moved here) */}
-            <div className="hidden max-w-2xl bg-[url('/img/art/paper-light.jpg')] bg-cover p-5  mb-6" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))' }}>
-              <Image
-                src="/img/home-header.png"
-                alt="Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold"
-                width={800}
-                height={200}
-                className="mb-2 w-full h-auto"
-                priority
-              />
-              <p className="text-2xl text-black font-bold text-center">Written and Directed by Jason Neulander</p>
-            </div>
+
 
 
 
             {/* Main Description */}
-            <div className="max-w-2xl text-2xl text-white bg-[#4b4f19]  p-5 mb-8  " style={{ filter: 'drop-shadow(0 4px 8px rgba(219, 220, 169, 0.4))' }}>
+            <div className="max-w-2xl text-2xl  bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black p-5 mb-8  " style={{ filter: 'drop-shadow(0 4px 8px rgba(219, 220, 169, 0.4))' }}>
               <p className="  mb-6">
                 <span className="float-left text-9xl mr-2 -mt-4">S</span>lated to begin touring in the Fall of 2026, <strong>Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold</strong> is Jason Neulander's newest "live-action graphic novel." In this adaptation of Robert Louis Stevenson's classic, four performers provide all the voices, sound effects, and cinematic score - live and in front of your eyes - in front of a huge screen to tell an on-the-edge-of-your-seat tale of danger and adventure for the kid in everyone.
               </p>
