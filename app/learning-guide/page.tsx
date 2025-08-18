@@ -107,7 +107,7 @@ export default function LearningGuide() {
 
                             <h4 id="what-to-expect" className="text-xl font-bold mb-4">What to Expect</h4>
 
-                            <Image src="/img/art/select-7.jpg" alt="Learning Guide Cover" width={300} height={300} className="border-1 border-black mb-5 md:float-right md:ml-5" />
+                            <Image src="/img/art/p17-insert.jpg" alt="Learning Guide Cover" width={300} height={300} className="border-3 border-black mb-5 md:float-right md:ml-5" />
 
                             <h5 className="text-lg font-bold mb-2">Performance</h5>
                             <ul className="text-lg leading-relaxed mb-4 list-disc list-inside space-y-1">
