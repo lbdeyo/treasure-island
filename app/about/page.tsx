@@ -35,7 +35,11 @@ export default function About() {
 
                                     <p className="text-lg leading-relaxed mb-6">With an artist secured, Jason contacted his old friend Sam Lipman to ask if he could compose the music. Sam said yes immediately. Jason then asked Buzz Moran, the genius behind the sound effects for <i>The Intergalactic Nemesis</i> , if he'd come on board as sound designer. A few months later, Lee Duhig joined as colorist and David Hutchison as letterer for the book version.</p>
                                     {/* Ghost Image */}
-                                    <div className="lg:flex-shrink-0 mt-8 lg:mt-0 flex justify-center lg:justify-start float-left">
+
+                                    <p className="text-lg leading-relaxed mb-6">The only thing left to do was secure a premiere. Jason called the programmer for Austin's Paramount Theater, Lietza Brass, and before he could finish describing the show, she committed to a date. September 26, 2026.</p>
+
+                                    <p className="text-lg leading-relaxed mb-6">A show was born.</p>
+                                    <div className="lg:flex-shrink-0 mt-8 mb-6 lg:mt-0 flex justify-center lg:justify-start float-left">
                                         <Image
                                             src="/img/art/ghost-2.png"
                                             alt="Ghost illustration"
@@ -44,10 +48,6 @@ export default function About() {
                                             className="object-contain "
                                         />
                                     </div>
-                                    <p className="text-lg leading-relaxed mb-6">The only thing left to do was secure a premiere. Jason called the programmer for Austin's Paramount Theater, Lietza Brass, and before he could finish describing the show, she committed to a date. September 26, 2026.</p>
-
-                                    <p className="text-lg leading-relaxed mb-6">A show was born.</p>
-
                                     <p className="text-lg leading-relaxed mb-6">The purpose of this website is to serve both venues who might book the tour and audience members who might want to take a deeper dive. Don't hesitate to explore! And by all means, contact us if you have any questions or simply want to get in touch.</p>
 
                                     <p className="text-lg leading-relaxed mb-12">See you at the theater.</p>
