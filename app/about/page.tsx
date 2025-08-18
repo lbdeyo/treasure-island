@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
     return (
-        <div className="bg-[url('/img/art/p-23-parchment.jpg')] bg-cover bg-top bg-repeat">
+        <div className="bg-[url('/img/art/p23-parchment-texture.jpg')] bg-cover bg-bottom bg- ">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div className="space-y-8">
                     {/* Page Header */}
