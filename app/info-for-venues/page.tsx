@@ -69,6 +69,11 @@ export default function InfoForVenues() {
                     <p className="text-lg leading-relaxed">
                         TIR will adapt the house rep lighting plot, which will light a general performance area downstage of the projection screen, plus four specials.
                     </p>
+                    <h3 className="text-xl font-bold mb-4">RESOURCES</h3>
+                    <p className="text-lg leading-relaxed">
+                        <a href="/img/tir-stage-plot-and-input-list.pdf" download>Download the Stage Plot and Input List.</a><br />
+                        <a href="/contact">Contact us</a> for the complete tech rider.
+                    </p>
 
                 </div>
             </div>
