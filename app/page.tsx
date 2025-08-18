@@ -23,6 +23,7 @@ export default function Home() {
 
             {/* Main Description */}
             <div className="max-w-2xl text-2xl  bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black p-5 mb-8  " >
+              <h1 className="  mb-6 pt-5 leading-1">Treasure Island Reimagined</h1>
               <p className="  mb-6">
                 <span className="float-left text-9xl mr-2 -mt-4">S</span>lated to begin touring in the Fall of 2026, <strong>Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold</strong> is Jason Neulander's newest "live-action graphic novel." In this adaptation of Robert Louis Stevenson's classic, four performers provide all the voices, sound effects, and cinematic score - live and in front of your eyes - in front of a huge screen to tell an on-the-edge-of-your-seat tale of danger and adventure for the kid in everyone.
               </p>
