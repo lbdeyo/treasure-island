@@ -4,12 +4,12 @@ export default function ArtisticTeam() {
     return (
         <div className=" bg-[url('/img/art/long-john-parchment-burn.jpg')] bg-cover bg-top">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5  ">
-                <div className="max-w-3xl bg-[#D4D6AD] p-5 mb-6 border-6 border-black" style={{ filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))' }}>
+                <div className="max-w-3xl bg-[#D4D6AD] p-5 mb-6 border-3 border-black" style={{ filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))' }}>
                     <p className="text-lg md:text-xl text-black leading-tight  ">
                         Chemistry Laboratories and Shaw Entertainment Group Present • A Jason Neulander Production • Treasure Island Reimagined • Sound effects designed by Buzz Moran • Music by Sam Lipman • Art by Johnny Dombrowski • Produced by Jason Neulander and Simon Shaw
                     </p>
                 </div>
-                <div className="relative max-w-3xl p-5 bg-[url('/img/art/paper-light.jpg')] bg-cover border-6 border-black">
+                <div className="relative max-w-3xl p-5 bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black">
                     {/* <div aria-hidden className="absolute inset-0 z-0 pointer-events-none bg-[url('/img/torn-paper-mask-2.png')] [background-size:100%_100%] bg-no-repeat opacity-50 [filter:blur(28px)_brightness(0.2)] transform translate-y-[5px] scale-[1.015]"></div>
                     <div aria-hidden className="absolute inset-0 z-10 pointer-events-none bg-[url('/img/art/paper-light.jpg')] bg-top bg-repeat bg-[length:1000px_auto] [mask-image:url('/img/torn-paper-mask-2.png')] [mask-size:100%_100%] [-webkit-mask-image:url('/img/torn-paper-mask-2.png')] [-webkit-mask-size:100%_100%] [mask-repeat:no-repeat] [-webkit-mask-repeat:no-repeat]"></div> */}
                     <div className="relative z-20">
