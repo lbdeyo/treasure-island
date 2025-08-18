@@ -10,7 +10,7 @@ export default function ArtisticTeam() {
                         A Jason Neulander Production<br />
                         TREASURE ISLAND REIMAGINED: JANE HAWKINS AND THE PIRATE'S GOLD<br />
                         Produced by Jason Neulander and Simon Shaw<br />
-                        Executive Producers - Peggy O'Shaughnessy, Jill Wilkinson, Michael Breen & Stephanie Hunte<br />
+                        Executive Producers - Peggy O'Shaughnessy, Jill Wilkinson, Michael Breen & Stephanie Hunter<br />
 
                     </p>
                 </div>
