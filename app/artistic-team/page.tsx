@@ -41,7 +41,7 @@ export default function ArtisticTeam() {
                                         <h2 className="text-2xl font-bold mb-4">Writer, director, producer</h2>
 
                                         <p className="text-lg leading-relaxed">
-                                            Jason Neulander is an award-winning author, filmmaker, and theater artist based in Austin, Texas. He has directed and produced more than 50 projects. His play <i> The Intergalactic Nemesis</i> toured to more than 200 venues around the world between 2010 and 2017, including runs on Broadway and sold-out performances at the Kennedy Center, was featured on CONAN, and was adapted for television by PBS. His debut feature film <i>Fugitive Dreams</i> (2024) (100% Fresh on Rotten Tomatoes) is available to stream across all platforms.
+                                            Jason Neulander is an award-winning author, filmmaker, and theater artist based in Austin, Texas. He has directed and produced more than 50 projects. His play <i> <a href="https://www.theintergalacticnemesis.com">The Intergalactic Nemesis</a></i> toured to more than 200 venues around the world between 2010 and 2017, including runs on Broadway and sold-out performances at the Kennedy Center, was featured on CONAN, and was adapted for television by PBS. His debut feature film <i><a href="https://www.youtube.com/watch?v=_xcd-qh7y_I">Fugitive Dreams</a></i> (2024) (100% Fresh on Rotten Tomatoes) is available to stream across all platforms.
                                         </p>
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@ export default function ArtisticTeam() {
                                         <h2 className="text-2xl font-bold mb-4">Sound Designer</h2>
 
                                         <p className="text-lg leading-relaxed">
-                                            Buzz Moran works mainly in the field of sound, including theatrical sound design, recorded music, performing live sound effects, and recording the sound of fields. Buzz has worked as Music Editor on numerous films, including <i>Hit Man</i>, <i>A Scanner Darkly</i>, and <i>Before Midnight</i>. He has worked extensively with Jason Neulander since the mid-90s, including creating the sound effects for the <i>Intergalactic Nemesis</i> trilogy. The guy we're talking about, Buzz Moran, also hosted a PBS web series called <i>What's That, Buzz?</i>, which is accessible on the internet thanks to technology.
+                                            Buzz Moran works mainly in the field of sound, including theatrical sound design, recorded music, performing live sound effects, and recording the sound of fields. Buzz has worked as Music Editor on numerous films, including <i>Hit Man</i>, <i>A Scanner Darkly</i>, and <i>Before Midnight</i>. He has worked extensively with Jason Neulander since the mid-90s, including creating the sound effects for the <i><a href="https://www.theintergalacticnemesis.com">Intergalactic Nemesis</a></i> trilogy. The guy we're talking about, Buzz Moran, also hosted a PBS web series called <i>What's That, Buzz?</i>, which is accessible on the internet thanks to technology.
                                         </p>
                                     </div>
                                 </div>

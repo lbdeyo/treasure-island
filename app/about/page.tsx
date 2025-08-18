@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
     return (
@@ -47,7 +48,7 @@ export default function About() {
                                             className="object-contain "
                                         />
                                     </div>
-                                    <p className="text-lg leading-relaxed mb-6">The purpose of this website is to serve both venues who might book the tour and audience members who might want to take a deeper dive. Don't hesitate to explore! And by all means, contact us if you have any questions or simply want to get in touch.</p>
+                                    <p className="text-lg leading-relaxed mb-6">The purpose of this website is to serve both venues who might book the tour and audience members who might want to take a deeper dive. Don't hesitate to explore! And by all means, <Link href="/contact">contact us</Link> if you have any questions or simply want to get in touch.</p>
 
                                     <p className="text-lg leading-relaxed mb-12">See you at the theater.</p>
                                 </div>
