@@ -51,7 +51,7 @@ export default function ArtisticTeam() {
                                         />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">Johnny Dombrowski</h2>
+                                        <h2 className="text-3xl font-bold">Johnny Dombrowski</h2>
                                         <h2 className="text-2xl font-bold mb-4">Art director and illustrator</h2>
                                         <p className="text-lg leading-relaxed">
                                             Johnny Dombrowski is an award winning illustrator living in Brooklyn, NY, creating comics and illustrations older than he is. He's worked for clients including Activision, Universal Pictures, StudioCanal, Mutant, Mondo, Jack White, Phish, New York Times, The New Yorker, Epic Games, and many more. You can find more of his work at <a href="mailto:johnnydombrowski@gmail.com" className="text-blue-500 hover:text-blue-600">johnnydombrowski@gmail.com</a> or <a href="https://www.instagram.com/jdombrowski/" className="text-blue-500 hover:text-blue-600">@jdombrowski</a> on all social media platforms.
@@ -73,7 +73,7 @@ export default function ArtisticTeam() {
                                         />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold ">Sam Lipman</h2>
+                                        <h2 className="text-3xl font-bold ">Sam Lipman</h2>
                                         <h2 className="text-2xl font-bold mb-4">Composer</h2>
 
                                         <p className="text-lg leading-relaxed">
@@ -95,7 +95,7 @@ export default function ArtisticTeam() {
                                         />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">Lee Duhig</h2>
+                                        <h2 className="text-3xl font-bold">Lee Duhig</h2>
                                         <h2 className="text-2xl font-bold mb-4">Colorist</h2>
 
                                         <p className="text-lg leading-relaxed">
@@ -117,7 +117,7 @@ export default function ArtisticTeam() {
                                         />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">Buzz Moran</h2>
+                                        <h2 className="text-3xl font-bold">Buzz Moran</h2>
                                         <h2 className="text-2xl font-bold mb-4">Sound Designer</h2>
 
                                         <p className="text-lg leading-relaxed">
