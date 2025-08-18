@@ -47,13 +47,21 @@ export default function Navigation() {
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
                     <div className="flex items-center h-16">
                         {/* Logo */}
-                        <Link href="/" className="flex items-center">
+                        <Link href="/" className="flex items-center group">
                             <Image
                                 src="/img/art/nav-logo.svg"
                                 alt="Treasure Island Reimagined Logo"
                                 width={48}
                                 height={48}
-                                className="h-12 w-auto"
+                                className="h-12 w-auto group-hover:hidden"
+                                priority
+                            />
+                            <Image
+                                src="/img/art/nav-logo-hover.svg"
+                                alt="Treasure Island Reimagined Logo (hover)"
+                                width={48}
+                                height={48}
+                                className="h-12 w-auto hidden group-hover:block"
                                 priority
                             />
                         </Link>
@@ -70,7 +78,7 @@ export default function Navigation() {
                                     {item.submenu ? (
                                         // Parent items with submenus - not clickable, just show dropdown
                                         <button
-                                            className={`text-black hover:text-black px-3 py-2 text-base font-bold flex items-center cursor-default `}
+                                            className={`text-black hover:text-[#8F171C] px-3 py-2 text-base font-bold flex items-center cursor-default `}
                                         >
                                             {item.label}
                                             <svg className="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -81,7 +89,7 @@ export default function Navigation() {
                                         // Regular menu items - clickable links
                                         <Link
                                             href={item.href}
-                                            className={`text-black hover:text-black px-3 py-2 text-base font-bold flex items-center `}
+                                            className={`text-black hover:text-[#8F171C] px-3 py-2 text-base font-bold flex items-center `}
                                         >
                                             {item.label}
                                         </Link>
@@ -95,7 +103,7 @@ export default function Navigation() {
                                                     <Link
                                                         key={subItem.href}
                                                         href={subItem.href}
-                                                        className={`block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-black `}
+                                                        className={`block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-[#8F171C] `}
                                                     >
                                                         {subItem.label}
                                                         {subItem.comingSoon && <span className="text-xs text-black ml-2">(coming soon)</span>}
@@ -138,7 +146,7 @@ export default function Navigation() {
                                                     onClick={() => setMobileSubmenuOpen(
                                                         mobileSubmenuOpen === item.label ? null : item.label
                                                     )}
-                                                    className={`w-full text-left px-3 py-2 text-base font-bold text-black hover:text-black hover:bg-gray-50 flex items-center justify-between `}
+                                                    className={`w-full text-left px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-gray-50 flex items-center justify-between `}
                                                 >
                                                     {item.label}
                                                     <svg
@@ -157,7 +165,7 @@ export default function Navigation() {
                                                                 key={subItem.href}
                                                                 href={subItem.href}
                                                                 onClick={() => setMobileMenuOpen(false)}
-                                                                className={`block px-3 py-2 text-base text-black hover:text-black hover:bg-gray-50 `}
+                                                                className={`block px-3 py-2 text-base text-black hover:text-[#8F171C] hover:bg-gray-50 `}
                                                             >
                                                                 {subItem.label}
                                                                 {subItem.comingSoon && <span className="text-xs text-black ml-2">(coming soon)</span>}
@@ -170,7 +178,7 @@ export default function Navigation() {
                                             <Link
                                                 href={item.href}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className={`block px-3 py-2 text-base font-bold text-black  hover:bg-gray-50 `}
+                                                className={`block px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-gray-50 `}
                                             >
                                                 {item.label}
                                             </Link>
