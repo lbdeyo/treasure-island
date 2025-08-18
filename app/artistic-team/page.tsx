@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ArtisticTeam() {
     return (
         <div className=" bg-[url('/img/art/long-john-parchment-burn.jpg')] bg-cover bg-top">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10  ">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5  ">
                 <div className="relative max-w-3xl p-5">
                     <div aria-hidden className="absolute inset-0 z-0 pointer-events-none bg-[url('/img/torn-paper-mask-2.png')] [background-size:100%_100%] bg-no-repeat opacity-50 [filter:blur(28px)_brightness(0.2)] transform translate-y-[5px] scale-[1.015]"></div>
                     <div aria-hidden className="absolute inset-0 z-10 pointer-events-none bg-[url('/img/art/paper-light.jpg')] bg-top bg-repeat bg-[length:1000px_auto] [mask-image:url('/img/torn-paper-mask-2.png')] [mask-size:100%_100%] [-webkit-mask-image:url('/img/torn-paper-mask-2.png')] [-webkit-mask-size:100%_100%] [mask-repeat:no-repeat] [-webkit-mask-repeat:no-repeat]"></div>
