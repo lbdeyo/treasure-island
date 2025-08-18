@@ -50,14 +50,14 @@ h1 {
 /* Global link styles - blue text, underline only on hover */
 /* Exclude navigation links from global styling */
 a:not(nav a) {
-  color: #2563eb;
+  color: #8f181c;
   /* text-blue-600 */
   text-decoration: none;
   transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 a:not(nav a):hover {
-  color: #1d4ed8;
+  color: #72090d;
   /* text-blue-700 */
   text-decoration: underline;
 }
