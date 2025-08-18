@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className=" bg-[url('/img/art/home-bg.jpg')] bg-cover bg-[xl]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8  ">
-        <div className="w-full bg-[#D4D6AD] p-5 mb-6" style={{ filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))' }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8  flex flex-col">
+        <div className="w-full bg-[#D4D6AD] p-5 mb-6 order-1 md:order-none" style={{ filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))' }}>
           <p className="text-lg md:text-2xl text-black leading-tight font-['TerraIgnota'] " >
             Chemistry Laboratories and Shaw Entertainment Group Present • A Jason Neulander Production • Treasure Island Reimagined • Sound effects designed by Buzz Moran • Music by Sam Lipman • Art by Johnny Dombrowski • Produced by Jason Neulander and Simon Shaw
           </p>
@@ -12,7 +12,7 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-12">
           {/* Title and Director */}
 
-          <div className="md:col-span-7 flex items-start order-1 md:order-none">
+          <div className="md:col-span-7 flex items-start">
             <div className="w-full " style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))' }}>
               <Image
                 src="/img/art/cover-art.jpg"
