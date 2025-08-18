@@ -31,7 +31,7 @@ body {
 /* Use TerraIgnota for h1 headings only */
 h1 {
   font-family: 'TerraIgnota', serif;
-  font-size: 7rem;
+  font-size: 5rem;
   /* 112px - large and impactful */
   line-height: 0.9;
   margin-top: -2.5rem;

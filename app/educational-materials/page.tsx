@@ -8,7 +8,7 @@ export default function EducationalMaterials() {
                     <div className="relative z-20 space-y-8">
                         {/* Page Header */}
 
-                        <h1 className=" mb-3 pt-7 px-7 " style={{ fontSize: '6rem' }}>Educational Materials</h1>
+                        <h1 className=" mb-3 pt-7 px-7 " >Educational Materials</h1>
 
                         {/* Educational Information */}
                         <div className="max-w-3xl px-7">
