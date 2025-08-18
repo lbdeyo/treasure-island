@@ -8,7 +8,7 @@ export default function LearningGuide() {
                     <div className="space-y-8">
                         {/* Complete Learning Guide */}
                         <div className="max-w-3xl   bg-opacity-100 p-7 " >
-                            <h1 className=" mb-6" style={{ fontSize: '6rem' }}>Complete Learning Guide</h1>
+                            <h1 className=" mb-6 pt-5" style={{ fontSize: '5rem' }}>Complete Learning Guide</h1>
                             < p className="text-lg leading-relaxed mb-8" >
                                 <Image src="/img/art/select-13.jpg" alt="learning eye" width={300} height={300} className="border-1 border-black mb-5 md:float-right md:ml-5" />
                                 <a href="#" className="font-semibold">Download</a> the guide as a pdf.
