@@ -7,19 +7,19 @@ export default function Contact() {
                     <div className="space-y-8">
                         {/* Page Header */}
                         <div className="max-w-3xl">
-                            <h1 className=" mb-8">Contact</h1>
+                            <h1 className=" mb-5 pt-5">Contact</h1>
                         </div>
 
                         {/* Production Information */}
                         <div className="max-w-3xl">
                             <h2 className="text-2xl font-bold mb-4">For information about the production:</h2>
                             <p className="text-lg leading-relaxed">
-                                Jason Neulander – <a href="mailto:jason@theplanetzygon.com">jason@theplanetzygon.com</a> – <a href="tel:+15127399769">512-739-9769</a>
+                                Jason Neulander  | <a href="tel:+15127399769">512-739-9769</a> | <a href="mailto:jason@theplanetzygon.com">jason@theplanetzygon.com</a>
                             </p>
                         </div>
 
                         {/* Tour Bookings */}
-                        <div className="max-w-3xl">
+                        <div className="max-w-3xl mb-8">
                             <h2 className="text-2xl font-bold mb-4">For tour bookings:</h2>
                             <div className="space-y-2">
                                 <p className="text-lg leading-relaxed">
