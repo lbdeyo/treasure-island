@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className=" bg-[url('/img/art/home-background.jpg')] bg-cover ">
+    <div className=" bg-[url('/img/art/home-background.jpg')] bg-cover min-h-screen min-w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8  ">
         <div className="grid gap-6 md:grid-cols-12">
           {/* Title and Director */}
@@ -31,10 +31,7 @@ export default function Home() {
                 The year is 1754. The place, the western shores of Scotland. Jane Hawkins, twelve years old, works at a sleepy seaside inn. When a sinister vagabond arrives with a mysterious trunk, Jane's humdrum life swerves towards adventure…
               </p>
             </div>
-
           </div>
-
-
         </div>
       </div>
     </div>
