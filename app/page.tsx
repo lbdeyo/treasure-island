@@ -3,12 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className=" bg-[url('/img/art/home-bg.jpg')] bg-cover bg-[xl]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8  flex flex-col">
-        <div className="w-full bg-[#D4D6AD] p-5 mb-6 order-1 md:order-none" style={{ filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))' }}>
-          <p className="text-lg md:text-2xl text-black leading-tight font-['TerraIgnota'] " >
-            Chemistry Laboratories and Shaw Entertainment Group Present • A Jason Neulander Production • Treasure Island Reimagined • Sound effects designed by Buzz Moran • Music by Sam Lipman • Art by Johnny Dombrowski • Produced by Jason Neulander and Simon Shaw
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8  ">
         <div className="grid gap-6 md:grid-cols-12">
           {/* Title and Director */}
 
@@ -25,8 +20,14 @@ export default function Home() {
             </div>
           </div>
           <div className="md:col-span-5 md:col-start-8 space-y-5">
+            {/* Production Credits (moved into right column) */}
+            <div className="w-full bg-[#D4D6AD] p-5 mb-6" style={{ filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))' }}>
+              <p className="text-lg md:text-2xl text-black leading-tight font-['TerraIgnota'] ">
+                Chemistry Laboratories and Shaw Entertainment Group Present • A Jason Neulander Production • Treasure Island Reimagined • Sound effects designed by Buzz Moran • Music by Sam Lipman • Art by Johnny Dombrowski • Produced by Jason Neulander and Simon Shaw
+              </p>
+            </div>
             {/* Home Header (moved here) */}
-            <div className="max-w-2xl bg-[url('/img/art/paper-light.jpg')] bg-cover p-5  mb-6" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))' }}>
+            <div className="hidden max-w-2xl bg-[url('/img/art/paper-light.jpg')] bg-cover p-5  mb-6" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))' }}>
               <Image
                 src="/img/home-header.png"
                 alt="Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold"
