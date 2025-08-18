@@ -104,6 +104,28 @@ export default function ArtisticTeam() {
                                     </div>
                                 </div>
                             </div>
+                            {/* Buzz Moran */}
+                            <div className="max-w-3xl my-16     ">
+                                <div className="flex flex-col md:flex-row md:gap-6 mb-8">
+                                    <div className="mb-4 md:mb-0 md:flex-shrink-0">
+                                        <Image
+                                            src="/img/buzz-moran.jpg"
+                                            alt="Buzz Moran"
+                                            width={200}
+                                            height={200}
+                                            className="border-5 border-black object-cover mt-3"
+                                        />
+                                    </div>
+                                    <div>
+                                        <h2 className="text-2xl font-bold">Buzz Moran</h2>
+                                        <h2 className="text-2xl font-bold mb-4">Sound Designer</h2>
+
+                                        <p className="text-lg leading-relaxed">
+                                            Buzz Moran works mainly in the field of sound, including theatrical sound design, recorded music, performing live sound effects, and recording the sound of fields. Buzz has worked as Music Editor on numerous films, including <i>Hit Man</i>, <i>A Scanner Darkly</i>, and <i>Before Midnight</i>. He has worked extensively with Jason Neulander since the mid-90s, including creating the sound effects for the <i>Intergalactic Nemesis</i> trilogy. The guy we're talking about, Buzz Moran, also hosted a PBS web series called <i>What's That, Buzz?</i>, which is accessible on the internet thanks to technology.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
