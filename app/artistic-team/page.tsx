@@ -5,8 +5,13 @@ export default function ArtisticTeam() {
         <div className=" bg-[url('/img/art/long-john-parchment-burn.jpg')] bg-cover bg-top bg-[min-height:100vh]">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5  ">
                 <div className="max-w-3xl bg-[#D4D6AD] p-5 mb-6 border-3 border-black" >
-                    <p className="text-lg md:text-xl text-black leading-tight  ">
-                        Chemistry Laboratories and Shaw Entertainment Group Present • A Jason Neulander Production • Treasure Island Reimagined • Sound effects designed by Buzz Moran • Music by Sam Lipman • Art by Johnny Dombrowski • Produced by Jason Neulander and Simon Shaw
+                    <p className="text-lg md:text-xl text-black leading-tight text-center  ">
+                        Chemistry Laboratories and Shaw Entertainment Group Present<br />
+                        A Jason Neulander Production<br />
+                        TREASURE ISLAND REIMAGINED: JANE HAWKINS AND THE PIRATE'S GOLD<br />
+                        Produced by Jason Neulander and Simon Shaw<br />
+                        Executive Producers - Peggy O'Shaughnessy, Jill Wilkinson, Michael Breen & Stephanie Hunte<br />
+
                     </p>
                 </div>
                 <div className="relative max-w-3xl p-5 bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black">
