@@ -49,7 +49,7 @@ export default function Navigation() {
                         {/* Logo */}
                         <Link href="/" className="flex items-center">
                             <Image
-                                src="/img/nav-logo.png"
+                                src="/img/art/nav-logo.svg"
                                 alt="Treasure Island Reimagined Logo"
                                 width={48}
                                 height={48}
