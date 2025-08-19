@@ -5,40 +5,39 @@ export default function Contact() {
         <div className="bg-[url('/img/art/contact-bg.jpg')] bg-cover bg-top bg-repeat min-h-screen">
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <div className="max-w-3xl bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black p-5" >
-                    <div className="flex flex-col lg:flex-row gap-4">
-                        <div className="flex-1">
-                            {/* Page Header */}
-                            <div>
-                                <h1 className="mb-5 pt-5">Contact</h1>
-                            </div>
+                <div className="flex flex-col lg:flex-row gap-6 items-start">
+                    {/* Content Paper */}
+                    <div className="max-w-3xl bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black p-5">
+                        {/* Page Header */}
+                        <div>
+                            <h1 className="mb-5 pt-5">Contact</h1>
+                        </div>
 
-                            {/* Production Information */}
-                            <div className="mb-6">
-                                <h2 className="text-2xl font-bold mb-4">For information about the production:</h2>
+                        {/* Production Information */}
+                        <div className="mb-6">
+                            <h2 className="text-2xl font-bold mb-4">For information about the production:</h2>
+                            <p className="text-lg leading-relaxed">
+                                Jason Neulander  | <a href="tel:+15127399769">512-739-9769</a> | <a href="mailto:jason@theplanetzygon.com">jason@theplanetzygon.com</a>
+                            </p>
+                        </div>
+
+                        {/* Tour Bookings */}
+                        <div className="mb-8">
+                            <h2 className="text-2xl font-bold mb-4">For tour bookings:</h2>
+                            <div className="space-y-2">
                                 <p className="text-lg leading-relaxed">
-                                    Jason Neulander  | <a href="tel:+15127399769">512-739-9769</a> | <a href="mailto:jason@theplanetzygon.com">jason@theplanetzygon.com</a>
+                                    Simon Shaw | <a href="tel:+19173926739">(917) 392-6739</a> | <a href="mailto:simon@shawentertainment.com">simon@shawentertainment.com</a>
+                                </p>
+                                <p className="text-lg leading-relaxed">
+                                    Sherri Leathers | <a href="tel:+16155006922">(615) 500-6922</a> | <a href="mailto:sherri@shawentertainment.com">sherri@shawentertainment.com</a>
                                 </p>
                             </div>
-
-                            {/* Tour Bookings */}
-                            <div className="mb-8">
-                                <h2 className="text-2xl font-bold mb-4">For tour bookings:</h2>
-                                <div className="space-y-2">
-                                    <p className="text-lg leading-relaxed">
-                                        Simon Shaw | <a href="tel:+19173926739">(917) 392-6739</a> | <a href="mailto:simon@shawentertainment.com">simon@shawentertainment.com</a>
-                                    </p>
-                                    <p className="text-lg leading-relaxed">
-                                        Sherri Leathers | <a href="tel:+16155006922">(615) 500-6922</a> | <a href="mailto:sherri@shawentertainment.com">sherri@shawentertainment.com</a>
-                                    </p>
-                                </div>
-                            </div>
                         </div>
+                    </div>
 
-                        {/* Image Container */}
-                        <div className="flex-shrink-0">
-                            <Image src="/img/art/janey-insert.jpg" alt="Janey" width={250} height={250} className="max-w-full h-auto" />
-                        </div>
+                    {/* Image Container - Outside the paper */}
+                    <div className="flex-shrink-0">
+                        <Image src="/img/art/janey-insert.jpg" alt="Janey" width={350} height={350} className="max-w-full h-auto" />
                     </div>
                 </div>
             </div>
