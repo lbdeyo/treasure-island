@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function About() {
     return (
-        <div className="bg-[url('/img/art/p23-parchment-texture.jpg')] bg-cover bg-bottom bg- ">
+        <div className="bg-[url('/img/art/janey.jpg')] bg-cover bg-top bg- ">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div className="space-y-8">
                     {/* Page Header */}
