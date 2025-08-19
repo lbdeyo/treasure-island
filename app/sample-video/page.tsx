@@ -15,16 +15,18 @@ export default function SampleVideo() {
 
                             {/* Coming Soon */}
 
-                            <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+                            <div style={{ padding: '75% 0 0 0', position: 'relative' }}>
                                 <iframe
-                                    src="https://player.vimeo.com/video/1108447276?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                    src="https://player.vimeo.com/video/1111353884?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                                     frameBorder="0"
                                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                                     referrerPolicy="strict-origin-when-cross-origin"
                                     style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                                    title="Treasure Island Reimagined - demo video"
+                                    title="TIR Demo video v3"
                                 />
                             </div>
+                            <script src="https://player.vimeo.com/api/player.js" async />
+
                             <p className="text-xl text-center text-black p-5">
                                 Matthew Armbruster -  voice and cello •
                                 Danu Mara - voices and sound effects<br />
