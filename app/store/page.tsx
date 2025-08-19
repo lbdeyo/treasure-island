@@ -4,7 +4,7 @@ export default function Store() {
 
     return (
         <div className="bg-[url('/img/art/p18.jpg')] bg-cover bg-top bg-repeat min-h-screen">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div className="max-w-3xl bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black p-5">
                     {/* Page Header */}
                     <div className="mb-8">
