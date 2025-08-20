@@ -82,24 +82,28 @@ const pageTextQuery = `
 
 // Function to fetch page content
 export async function getPageContent(pageId: string): Promise<PageContent | null> {
-    try {
-        const content = await client.fetch(pageContentQuery, { pageId })
-        return content
-    } catch (error) {
-        console.error('Error fetching page content:', error)
-        return null
-    }
+  try {
+    const content = await client.fetch(pageContentQuery, { pageId }, {
+      next: { revalidate: 0 } // Disable caching for immediate updates
+    })
+    return content
+  } catch (error) {
+    console.error('Error fetching page content:', error)
+    return null
+  }
 }
 
 // Function to fetch text-only page content
 export async function getPageTextContent(pageId: string): Promise<PageTextContent | null> {
-    try {
-        const content = await client.fetch(pageTextQuery, { pageId })
-        return content
-    } catch (error) {
-        console.error('Error fetching page text content:', error)
-        return null
-    }
+  try {
+    const content = await client.fetch(pageTextQuery, { pageId }, {
+      next: { revalidate: 0 } // Disable caching for immediate updates
+    })
+    return content
+  } catch (error) {
+    console.error('Error fetching page text content:', error)
+    return null
+  }
 }
 
 // Helper function to convert Sanity rich text to HTML (you can customize this)
