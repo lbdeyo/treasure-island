@@ -2,33 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from '@portabletext/react'
 import { getPageTextContent } from '@/lib/sanityQueries'
-
-// Custom components for rendering rich text
-const portableTextComponents = {
-    block: {
-        normal: ({ children }: any) => (
-            <p className="text-xl leading-relaxed mb-4">{children}</p>
-        ),
-        h1: ({ children }: any) => (
-            <h2 className="text-2xl font-bold mb-4">{children}</h2>
-        ),
-        h2: ({ children }: any) => (
-            <h2 className="text-2xl font-bold mb-4">{children}</h2>
-        ),
-        h3: ({ children }: any) => (
-            <h3 className="text-xl font-bold mb-4">{children}</h3>
-        ),
-    },
-    marks: {
-        em: ({ children }: any) => <em>{children}</em>,
-        strong: ({ children }: any) => <strong>{children}</strong>,
-        link: ({ children, value }: any) => (
-            <Link href={value.href} className="text-blue-600 hover:underline font-medium">
-                {children}
-            </Link>
-        ),
-    },
-}
+import { storePortableTextComponents } from '@/lib/portableTextComponents'
 
 export default async function Store() {
     // Fetch text content from Sanity
@@ -77,7 +51,7 @@ export default async function Store() {
                                         <div key={index}>
                                             <PortableText
                                                 value={paragraph.content}
-                                                components={portableTextComponents}
+                                                components={storePortableTextComponents}
                                             />
                                         </div>
                                     );

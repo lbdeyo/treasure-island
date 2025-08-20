@@ -2,42 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from '@portabletext/react'
 import { getPageTextContent } from '@/lib/sanityQueries'
+import { basePortableTextComponents } from '@/lib/portableTextComponents'
 
-// Custom components for rendering rich text
-const portableTextComponents = {
+// Learning guide specific components (with large title support)
+const learningGuidePortableTextComponents = {
+    ...basePortableTextComponents,
     block: {
-        normal: ({ children }: any) => (
-            <p className="text-lg leading-relaxed mb-6">{children}</p>
-        ),
+        ...basePortableTextComponents.block,
         h1: ({ children }: any) => (
             <h1 className="mb-6 pt-5" style={{ fontSize: '5rem' }}>{children}</h1>
         ),
-        h2: ({ children }: any) => (
-            <h2 className="text-2xl font-bold mb-4">{children}</h2>
-        ),
-        h3: ({ children }: any) => (
-            <h3 className="text-xl font-bold mb-4">{children}</h3>
-        ),
-        h4: ({ children }: any) => (
-            <h4 className="text-lg font-bold mb-2">{children}</h4>
-        ),
-    },
-    marks: {
-        em: ({ children }: any) => <em>{children}</em>,
-        strong: ({ children }: any) => <strong>{children}</strong>,
-        link: ({ children, value }: any) => (
-            <a href={value.href} className="text-blue-600 hover:underline font-medium">
-                {children}
-            </a>
-        ),
-    },
-    list: {
-        bullet: ({ children }: any) => <ul className="text-lg leading-relaxed list-disc list-inside space-y-1 mb-6">{children}</ul>,
-        number: ({ children }: any) => <ol className="text-lg leading-relaxed list-decimal list-inside space-y-1 mb-6">{children}</ol>,
-    },
-    listItem: {
-        bullet: ({ children }: any) => <li>{children}</li>,
-        number: ({ children }: any) => <li>{children}</li>,
     },
 }
 
@@ -70,7 +44,7 @@ export default async function LearningGuide() {
                                     <div key={index}>
                                         <PortableText
                                             value={paragraph.content}
-                                            components={portableTextComponents}
+                                            components={learningGuidePortableTextComponents}
                                         />
                                         {/* Insert images at specific positions based on content flow */}
                                         {index === 2 && (

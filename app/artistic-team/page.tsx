@@ -2,33 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from '@portabletext/react'
 import { getPageTextContent } from '@/lib/sanityQueries'
-
-// Custom components for rendering rich text
-const portableTextComponents = {
-    block: {
-        normal: ({ children }: any) => (
-            <p className="text-lg leading-relaxed">{children}</p>
-        ),
-        h1: ({ children }: any) => (
-            <h1>{children}</h1>
-        ),
-        h2: ({ children }: any) => (
-            <h2 className="text-3xl font-bold">{children}</h2>
-        ),
-        h3: ({ children }: any) => (
-            <h3 className="text-2xl font-bold mb-4">{children}</h3>
-        ),
-    },
-    marks: {
-        em: ({ children }: any) => <em>{children}</em>,
-        strong: ({ children }: any) => <strong>{children}</strong>,
-        link: ({ children, value }: any) => (
-            <a href={value.href} className="text-blue-500 hover:text-blue-600">
-                {children}
-            </a>
-        ),
-    },
-}
+import { artisticTeamPortableTextComponents } from '@/lib/portableTextComponents'
 
 export default async function ArtisticTeam() {
     // Fetch text content from Sanity
@@ -133,7 +107,7 @@ export default async function ArtisticTeam() {
                                                         <div>
                                                             <PortableText
                                                                 value={paragraph.content}
-                                                                components={portableTextComponents}
+                                                                components={artisticTeamPortableTextComponents}
                                                             />
                                                         </div>
                                                     </div>
@@ -155,7 +129,7 @@ export default async function ArtisticTeam() {
                                                         <div>
                                                             <PortableText
                                                                 value={paragraph.content}
-                                                                components={portableTextComponents}
+                                                                components={artisticTeamPortableTextComponents}
                                                             />
                                                         </div>
                                                     </div>
@@ -177,7 +151,7 @@ export default async function ArtisticTeam() {
                                                         <div>
                                                             <PortableText
                                                                 value={paragraph.content}
-                                                                components={portableTextComponents}
+                                                                components={artisticTeamPortableTextComponents}
                                                             />
                                                         </div>
                                                     </div>
@@ -199,7 +173,7 @@ export default async function ArtisticTeam() {
                                                         <div>
                                                             <PortableText
                                                                 value={paragraph.content}
-                                                                components={portableTextComponents}
+                                                                components={artisticTeamPortableTextComponents}
                                                             />
                                                         </div>
                                                     </div>
@@ -221,7 +195,7 @@ export default async function ArtisticTeam() {
                                                         <div>
                                                             <PortableText
                                                                 value={paragraph.content}
-                                                                components={portableTextComponents}
+                                                                components={artisticTeamPortableTextComponents}
                                                             />
                                                         </div>
                                                     </div>
@@ -232,7 +206,7 @@ export default async function ArtisticTeam() {
                                                 <div className="max-w-3xl my-16">
                                                     <PortableText
                                                         value={paragraph.content}
-                                                        components={portableTextComponents}
+                                                        components={artisticTeamPortableTextComponents}
                                                     />
                                                 </div>
                                             )}

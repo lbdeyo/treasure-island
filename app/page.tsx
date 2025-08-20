@@ -1,33 +1,7 @@
 import Image from "next/image";
 import { PortableText } from '@portabletext/react'
 import { getPageTextContent } from '@/lib/sanityQueries'
-
-// Custom components for rendering rich text with drop cap support
-const portableTextComponents = {
-  block: {
-    normal: ({ children, value }: any) => {
-      // Check if this is marked as a drop cap paragraph
-      const isDropCap = value?.markDefs?.some((mark: any) => mark._type === 'dropCap') ||
-        value?.style === 'dropCap';
-
-      if (isDropCap) {
-        return <p className="mb-6 drop-cap-paragraph">{children}</p>;
-      }
-      return <p className="mb-6">{children}</p>;
-    },
-    dropCap: ({ children }: any) => (
-      <p className="mb-6 drop-cap-paragraph">{children}</p>
-    ),
-  },
-  marks: {
-    strong: ({ children }: any) => <strong>{children}</strong>,
-    em: ({ children }: any) => <em>{children}</em>,
-    // Custom drop cap mark
-    dropCapLetter: ({ children }: any) => (
-      <span className="float-left text-9xl mr-2 -mt-4">{children}</span>
-    ),
-  },
-}
+import { homePortableTextComponents } from '@/lib/portableTextComponents'
 
 export default async function Home() {
   // Fetch text content from Sanity
@@ -65,7 +39,7 @@ export default async function Home() {
                   <div key={index}>
                     <PortableText
                       value={paragraph.content}
-                      components={portableTextComponents}
+                      components={homePortableTextComponents}
                     />
                   </div>
                 ))

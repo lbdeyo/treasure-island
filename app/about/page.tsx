@@ -2,24 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from '@portabletext/react'
 import { getPageTextContent } from '@/lib/sanityQueries'
-
-// Custom components for rendering rich text
-const portableTextComponents = {
-    block: {
-        normal: ({ children }: any) => (
-            <p className="text-lg leading-relaxed mb-6">{children}</p>
-        ),
-    },
-    marks: {
-        em: ({ children }: any) => <em>{children}</em>,
-        strong: ({ children }: any) => <strong>{children}</strong>,
-        link: ({ children, value }: any) => (
-            <Link href={value.href} className="text-blue-600 hover:underline">
-                {children}
-            </Link>
-        ),
-    },
-}
+import { basePortableTextComponents } from '@/lib/portableTextComponents'
 
 export default async function About() {
     // Fetch text content from Sanity
@@ -49,7 +32,7 @@ export default async function About() {
                                             <div key={index}>
                                                 <PortableText
                                                     value={paragraph.content}
-                                                    components={portableTextComponents}
+                                                    components={basePortableTextComponents}
                                                 />
                                                 {/* Insert images at specific positions */}
                                                 {index === 1 && (
