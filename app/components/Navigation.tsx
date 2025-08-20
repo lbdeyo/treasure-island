@@ -118,7 +118,7 @@ export default function Navigation() {
                                                         className={`block px-4 py-2 text-sm text-black hover:text-[#8F171C] transition-colors`}
                                                         style={{ backgroundColor: 'transparent' }}
                                                         onMouseEnter={(e) => {
-                                                            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                                                            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
                                                         }}
                                                         onMouseLeave={(e) => {
                                                             e.currentTarget.style.backgroundColor = 'transparent';

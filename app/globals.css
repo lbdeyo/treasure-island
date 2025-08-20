@@ -10,43 +10,7 @@
   font-weight: normal;
 }
 
-/* Navigation dropdown styling */
-.nav-dropdown {
-  background-color: #f5f1e8 !important;
-}
-
-.nav-dropdown-item:hover {
-  background-color: #f5f1e8 !important;
-}
-
-/* More specific targeting for dropdown backgrounds */
-div.absolute.left-0.mt-0.w-64.shadow-lg.border.border-gray-200.rounded-md {
-  background-color: #f5f1e8 !important;
-}
-
-div.absolute.left-0.mt-0.w-64.shadow-lg.border.border-gray-200.rounded-md div.py-2 {
-  background-color: #f5f1e8 !important;
-}
-
-/* Target dropdown links specifically */
-div.absolute.left-0.mt-0.w-64 a.block.px-4.py-2:hover {
-  background-color: #f5f1e8 !important;
-}
-
-/* Even more aggressive targeting */
-div[class*="absolute"][class*="left-0"][class*="w-64"] {
-  background-color: #f5f1e8 !important;
-}
-
-/* Target any dropdown-like div */
-.relative div.absolute[class*="w-64"] {
-  background-color: #f5f1e8 !important;
-}
-
-/* Force all potential dropdown backgrounds */
-nav div.absolute {
-  background-color: #f5f1e8 !important;
-}
+/* Navigation dropdown styling - removed to allow transparent hover effects */
 
 @font-face {
   font-family: 'TerraIgnota';
