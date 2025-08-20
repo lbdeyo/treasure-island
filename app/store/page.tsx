@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { PortableText } from '@portabletext/react'
 import { getPageTextContent } from '@/lib/sanityQueries'
 import { storePortableTextComponents } from '@/lib/portableTextComponents'
