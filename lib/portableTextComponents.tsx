@@ -103,3 +103,18 @@ export const artisticTeamPortableTextComponents = {
         ),
     },
 }
+
+// Sample video specific components (for password and credits styling)
+export const sampleVideoPortableTextComponents = {
+    ...basePortableTextComponents,
+    block: {
+        ...basePortableTextComponents.block,
+        normal: ({ children }: any) => (
+            <p className="text-2xl text-black pt-3 pb-5">{children}</p>
+        ),
+        // Special style for credits
+        credits: ({ children }: any) => (
+            <p className="text-xl text-center text-black p-5">{children}</p>
+        ),
+    },
+}
