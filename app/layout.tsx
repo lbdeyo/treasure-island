@@ -57,6 +57,7 @@ export default function RootLayout({
         <link rel="icon" type="image/x-icon" sizes="48x48" href="/img/favicons/20813-8-skull-photos_48x48.ico" />
         <link rel="icon" type="image/x-icon" sizes="64x64" href="/img/favicons/20813-8-skull-photos_64x64.ico" />
         <link rel="apple-touch-icon" href="/img/favicons/20813-8-skull-photos_64x64.ico" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${alikeAngular.variable} ${alexBrush.variable} antialiased`}
