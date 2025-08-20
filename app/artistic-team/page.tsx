@@ -1,18 +1,92 @@
 import Image from "next/image";
+import Link from "next/link";
+import { PortableText } from '@portabletext/react'
+import { getPageTextContent } from '@/lib/sanityQueries'
 
-export default function ArtisticTeam() {
+// Custom components for rendering rich text
+const portableTextComponents = {
+    block: {
+        normal: ({ children }: any) => (
+            <p className="text-lg leading-relaxed">{children}</p>
+        ),
+        h1: ({ children }: any) => (
+            <h1>{children}</h1>
+        ),
+        h2: ({ children }: any) => (
+            <h2 className="text-3xl font-bold">{children}</h2>
+        ),
+        h3: ({ children }: any) => (
+            <h3 className="text-2xl font-bold mb-4">{children}</h3>
+        ),
+    },
+    marks: {
+        em: ({ children }: any) => <em>{children}</em>,
+        strong: ({ children }: any) => <strong>{children}</strong>,
+        link: ({ children, value }: any) => (
+            <a href={value.href} className="text-blue-500 hover:text-blue-600">
+                {children}
+            </a>
+        ),
+    },
+}
+
+export default async function ArtisticTeam() {
+    // Fetch text content from Sanity
+    const textContent = await getPageTextContent('artistic-team')
+
+    // Use Sanity title if available, otherwise fallback
+    const pageTitle = textContent?.title || "Artistic Team"
+
+    // Get paragraphs from Sanity, sorted by order
+    const paragraphs = textContent?.paragraphs || []
     return (
         <div className=" bg-[url('/img/art/long-john-parchment-burn.jpg')] bg-cover bg-top bg-[min-height:100vh]">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5  ">
-                <div className="max-w-3xl bg-[#D4D6AD] p-5 mb-6 border-3 border-black" >
-                    <p className="text-lg md:text-xl text-black leading-tight text-center  ">
-                        Chemistry Laboratories and Shaw Entertainment Group Present<br />
-                        A Jason Neulander Production<br />
-                        TREASURE ISLAND REIMAGINED: JANE HAWKINS AND THE PIRATE'S GOLD<br />
-                        Produced by Jason Neulander and Simon Shaw<br />
-                        Executive Producers - Peggy O'Shaughnessy, Jill Wilkinson, Michael Breen & Stephanie Hunter<br />
-
-                    </p>
+                <div className="max-w-3xl bg-[#D4D6AD] p-5 mb-6 border-3 border-black">
+                    {paragraphs.length > 0 ? (
+                        // Find and render the production credits paragraph
+                        paragraphs
+                            .filter((paragraph) => {
+                                // Find paragraphs that contain production credits
+                                const hasProductionCredits = paragraph.content?.some((block: any) =>
+                                    block._type === 'block' &&
+                                    block.children?.some((child: any) =>
+                                        child.text?.includes('Chemistry Laboratories') ||
+                                        child.text?.includes('Shaw Entertainment Group') ||
+                                        child.text?.includes('Jason Neulander Production') ||
+                                        child.text?.includes('Executive Producers')
+                                    )
+                                );
+                                return hasProductionCredits;
+                            })
+                            .slice(0, 1) // Only take the first production credits paragraph
+                            .map((paragraph, index) => (
+                                <div key={index} className="text-lg md:text-xl text-black leading-tight text-center">
+                                    <PortableText
+                                        value={paragraph.content}
+                                        components={{
+                                            block: {
+                                                normal: ({ children }: any) => (
+                                                    <p className="text-lg md:text-xl text-black leading-tight text-center">{children}</p>
+                                                ),
+                                            },
+                                            marks: {
+                                                strong: ({ children }: any) => <strong>{children}</strong>,
+                                            },
+                                        }}
+                                    />
+                                </div>
+                            ))
+                    ) : (
+                        // Fallback production credits
+                        <p className="text-lg md:text-xl text-black leading-tight text-center">
+                            Chemistry Laboratories and Shaw Entertainment Group Present<br />
+                            A Jason Neulander Production<br />
+                            TREASURE ISLAND REIMAGINED: JANE HAWKINS AND THE PIRATE'S GOLD<br />
+                            Produced by Jason Neulander and Simon Shaw<br />
+                            Executive Producers - Peggy O'Shaughnessy, Jill Wilkinson, Michael Breen & Stephanie Hunter
+                        </p>
+                    )}
                 </div>
                 <div className="relative max-w-3xl p-5 bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black">
 
@@ -21,120 +95,175 @@ export default function ArtisticTeam() {
                         <div className="space-y-8 max-w-3xl p-5">
                             {/* Page Header */}
                             <div className="max-w-2xl mt-3">
-                                <h1>Artistic Team</h1>
+                                <h1>{pageTitle}</h1>
                             </div>
 
-                            {/* Jason Neulander */}
-                            <div className="max-w-2xl mb-16 ">
-                                <div className="flex flex-col md:flex-row md:gap-6 mb-8">
-                                    <div className="mb-4 md:mb-0 md:flex-shrink-0">
-                                        <Image
-                                            src="/img/jason-neulander.jpg"
-                                            alt="Jason Neulander"
-                                            width={200}
-                                            height={200}
-                                            className=" object-cover mt-3"
-                                        />
+                            {paragraphs.length > 0 ? (
+                                // Render Sanity content with team member images, filtering out production credits
+                                paragraphs
+                                    .filter((paragraph) => {
+                                        // Filter out paragraphs that contain production credits
+                                        const hasProductionCredits = paragraph.content?.some((block: any) =>
+                                            block._type === 'block' &&
+                                            block.children?.some((child: any) =>
+                                                child.text?.includes('Chemistry Laboratories') ||
+                                                child.text?.includes('Shaw Entertainment Group') ||
+                                                child.text?.includes('Jason Neulander Production') ||
+                                                child.text?.includes('Executive Producers')
+                                            )
+                                        );
+                                        return !hasProductionCredits;
+                                    })
+                                    .map((paragraph, index) => (
+                                        <div key={index}>
+                                            {/* Insert team member images at specific positions */}
+                                            {index === 0 && (
+                                                // Jason Neulander
+                                                <div className="max-w-2xl mb-16">
+                                                    <div className="flex flex-col md:flex-row md:gap-6 mb-8">
+                                                        <div className="mb-4 md:mb-0 md:flex-shrink-0">
+                                                            <Image
+                                                                src="/img/jason-neulander.jpg"
+                                                                alt="Jason Neulander"
+                                                                width={200}
+                                                                height={200}
+                                                                className="object-cover mt-3"
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <PortableText
+                                                                value={paragraph.content}
+                                                                components={portableTextComponents}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {index === 1 && (
+                                                // Johnny Dombrowski
+                                                <div className="max-w-2xl my-16">
+                                                    <div className="flex flex-col md:flex-row md:gap-6 mb-8">
+                                                        <div className="mb-4 md:mb-0 md:flex-shrink-0">
+                                                            <Image
+                                                                src="/img/johnny-dombrowski.jpg"
+                                                                alt="Johnny Dombrowski"
+                                                                width={200}
+                                                                height={200}
+                                                                className="object-cover mt-3"
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <PortableText
+                                                                value={paragraph.content}
+                                                                components={portableTextComponents}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {index === 2 && (
+                                                // Sam Lipman
+                                                <div className="max-w-3xl my-16">
+                                                    <div className="flex flex-col md:flex-row md:gap-6 mb-8">
+                                                        <div className="mb-4 md:mb-0 md:flex-shrink-0">
+                                                            <Image
+                                                                src="/img/sam-lipman.jpg"
+                                                                alt="Sam Lipman"
+                                                                width={200}
+                                                                height={200}
+                                                                className="object-cover mt-3"
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <PortableText
+                                                                value={paragraph.content}
+                                                                components={portableTextComponents}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {index === 3 && (
+                                                // Lee Duhig
+                                                <div className="max-w-3xl my-16">
+                                                    <div className="flex flex-col md:flex-row md:gap-6 mb-8">
+                                                        <div className="mb-4 md:mb-0 md:flex-shrink-0">
+                                                            <Image
+                                                                src="/img/lee-duhig.jpg"
+                                                                alt="Lee Duhig"
+                                                                width={200}
+                                                                height={200}
+                                                                className="object-cover mt-3"
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <PortableText
+                                                                value={paragraph.content}
+                                                                components={portableTextComponents}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {index === 4 && (
+                                                // Buzz Moran
+                                                <div className="max-w-3xl my-16">
+                                                    <div className="flex flex-col md:flex-row md:gap-6 mb-8">
+                                                        <div className="mb-4 md:mb-0 md:flex-shrink-0">
+                                                            <Image
+                                                                src="/img/buzz-moran.jpg"
+                                                                alt="Buzz Moran"
+                                                                width={200}
+                                                                height={200}
+                                                                className="object-cover mt-3"
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <PortableText
+                                                                value={paragraph.content}
+                                                                components={portableTextComponents}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {/* For any additional paragraphs without specific team member images */}
+                                            {index > 4 && (
+                                                <div className="max-w-3xl my-16">
+                                                    <PortableText
+                                                        value={paragraph.content}
+                                                        components={portableTextComponents}
+                                                    />
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))
+                            ) : (
+                                // Fallback content if no Sanity content
+                                <>
+                                    {/* Jason Neulander */}
+                                    <div className="max-w-2xl mb-16">
+                                        <div className="flex flex-col md:flex-row md:gap-6 mb-8">
+                                            <div className="mb-4 md:mb-0 md:flex-shrink-0">
+                                                <Image
+                                                    src="/img/jason-neulander.jpg"
+                                                    alt="Jason Neulander"
+                                                    width={200}
+                                                    height={200}
+                                                    className="object-cover mt-3"
+                                                />
+                                            </div>
+                                            <div>
+                                                <h2 className="text-3xl font-bold">Jason Neulander</h2>
+                                                <h2 className="text-2xl font-bold mb-4">Writer, director, producer</h2>
+                                                <p className="text-lg leading-relaxed">
+                                                    Content is being loaded from Sanity Studio. Please check back soon.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h2 className="text-3xl font-bold ">Jason Neulander</h2>
-                                        <h2 className="text-2xl font-bold mb-4">Writer, director, producer</h2>
-
-                                        <p className="text-lg leading-relaxed">
-                                            Jason Neulander is an award-winning author, filmmaker, and theater artist based in Austin, Texas. He has directed and produced more than 50 projects. His play <i> <a href="https://www.theintergalacticnemesis.com">The Intergalactic Nemesis</a></i> toured to more than 200 venues around the world between 2010 and 2017, including runs on Broadway and sold-out performances at the Kennedy Center, was featured on CONAN, and was adapted for television by PBS. His debut feature film <i><a href="https://www.youtube.com/watch?v=_xcd-qh7y_I">Fugitive Dreams</a></i> (2024) (100% Fresh on Rotten Tomatoes) is available to stream across all platforms.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Johnny Dombrowski */}
-                            <div className="max-w-2xl my-16 ">
-                                <div className="flex flex-col md:flex-row md:gap-6 mb-8">
-                                    <div className="mb-4 md:mb-0 md:flex-shrink-0">
-                                        <Image
-                                            src="/img/johnny-dombrowski.jpg"
-                                            alt="Johnny Dombrowski"
-                                            width={200}
-                                            height={200}
-                                            className="  object-cover mt-3"
-                                        />
-                                    </div>
-                                    <div>
-                                        <h2 className="text-3xl font-bold">Johnny Dombrowski</h2>
-                                        <h2 className="text-2xl font-bold mb-4">Art director and illustrator</h2>
-                                        <p className="text-lg leading-relaxed">
-                                            Johnny Dombrowski is an award winning illustrator living in Brooklyn, NY, creating comics and illustrations older than he is. He's worked for clients including Activision, Universal Pictures, StudioCanal, Mutant, Mondo, Jack White, Phish, New York Times, The New Yorker, Epic Games, and many more. You can find more of his work at <a href="mailto:johnnydombrowski@gmail.com" className="text-blue-500 hover:text-blue-600">johnnydombrowski@gmail.com</a> or <a href="https://www.instagram.com/jdombrowski/" className="text-blue-500 hover:text-blue-600">@jdombrowski</a> on all social media platforms.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Sam Lipman */}
-                            <div className="max-w-3xl my-16 ">
-                                <div className="flex flex-col md:flex-row md:gap-6 mb-8">
-                                    <div className="mb-4 md:mb-0 md:flex-shrink-0">
-                                        <Image
-                                            src="/img/sam-lipman.jpg"
-                                            alt="Sam Lipman"
-                                            width={200}
-                                            height={200}
-                                            className=" object-cover mt-3"
-                                        />
-                                    </div>
-                                    <div>
-                                        <h2 className="text-3xl font-bold ">Sam Lipman</h2>
-                                        <h2 className="text-2xl font-bold mb-4">Composer</h2>
-
-                                        <p className="text-lg leading-relaxed">
-                                            Sam Lipman is an award-winning composer whose works have been performed by the New Jersey Symphony Orchestra, at Carnegie Hall, and Lincoln Center. His recent <i>Unbroken Call</i>—the first-ever commission by the Austin Symphony Orchestra—premiered with featured soloist Giveton Gelin of Jon Batiste's group, earning multiple standing ovations. His orchestral ballet <i>MoonFall</i> sold out its two-week premiere and earned 12 award nominations. Lipman has composed for film, including Terrence Malick and Richard Linklater, and teaches Film Scoring at the University of Texas.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Lee Duhig */}
-                            <div className="max-w-3xl my-16     ">
-                                <div className="flex flex-col md:flex-row md:gap-6 mb-8">
-                                    <div className="mb-4 md:mb-0 md:flex-shrink-0">
-                                        <Image
-                                            src="/img/lee-duhig.jpg"
-                                            alt="Lee Duhig"
-                                            width={200}
-                                            height={200}
-                                            className=" object-cover mt-3"
-                                        />
-                                    </div>
-                                    <div>
-                                        <h2 className="text-3xl font-bold">Lee Duhig</h2>
-                                        <h2 className="text-2xl font-bold mb-4">Colorist</h2>
-
-                                        <p className="text-lg leading-relaxed">
-                                            Lee Duhig is a prolifically-humble digital color artist who has worked with seemingly every comic book publisher you can name in less than a minute. His longest stint is certainly with Marvel, where he (under the name "GURU-eFX") has colored hundreds of titles and thousands of pages for two and a half decades and to this day. He enjoys collecting more physical media than one safely or reasonably should. Like all great nerds, he reside in the Lonestar state.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Buzz Moran */}
-                            <div className="max-w-3xl my-16     ">
-                                <div className="flex flex-col md:flex-row md:gap-6 mb-8">
-                                    <div className="mb-4 md:mb-0 md:flex-shrink-0">
-                                        <Image
-                                            src="/img/buzz-moran.jpg"
-                                            alt="Buzz Moran"
-                                            width={200}
-                                            height={200}
-                                            className=" object-cover mt-3"
-                                        />
-                                    </div>
-                                    <div>
-                                        <h2 className="text-3xl font-bold">Buzz Moran</h2>
-                                        <h2 className="text-2xl font-bold mb-4">Sound Designer</h2>
-
-                                        <p className="text-lg leading-relaxed">
-                                            Buzz Moran works mainly in the field of sound, including theatrical sound design, recorded music, performing live sound effects, and recording the sound of fields. Buzz has worked as Music Editor on numerous films, including <i>Hit Man</i>, <i>A Scanner Darkly</i>, and <i>Before Midnight</i>. He has worked extensively with Jason Neulander since the mid-90s, including creating the sound effects for the <i><a href="https://www.theintergalacticnemesis.com">Intergalactic Nemesis</a></i> trilogy. The guy we're talking about, Buzz Moran, also hosted a PBS web series called <i>What's That, Buzz?</i>, which is accessible on the internet thanks to technology.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                                </>
+                            )}
                         </div>
                     </div>
 
