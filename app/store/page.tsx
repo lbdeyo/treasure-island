@@ -26,7 +26,7 @@ export default async function Store() {
                     <div className="flex flex-col lg:flex-row gap-6 items-start">
                         {/* Book Cover Image */}
                         <div className="flex-shrink-0">
-                            <Image src="/img/art/cover-art.jpg" alt="Treasure Island Reimagined Book Cover" width={300} height={375} className="max-w-full h-auto shadow-lg" />
+                            <Image src="/img/art/book-cover.jpg" alt="Treasure Island Reimagined Book Cover" width={300} height={375} className="max-w-full h-auto shadow-lg" />
                         </div>
 
                         {/* Body Text */}

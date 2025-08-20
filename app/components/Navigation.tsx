@@ -97,13 +97,23 @@ export default function Navigation() {
 
                                     {/* Dropdown Menu */}
                                     {item.submenu && openDropdown === item.label && (
-                                        <div className="absolute left-0 mt-0 w-64 bg-white shadow-lg border border-gray-200 rounded-md z-[200]">
-                                            <div className="py-2">
+                                        <div
+                                            className="absolute left-0 mt-0 w-64 shadow-lg border border-gray-200 rounded-md z-[200]"
+                                            style={{ backgroundColor: '#f5f1e8', border: '1px solid #d1d5db' }}
+                                        >
+                                            <div className="py-2" style={{ backgroundColor: '#f5f1e8' }}>
                                                 {item.submenu.map((subItem) => (
                                                     <Link
                                                         key={subItem.href}
                                                         href={subItem.href}
-                                                        className={`block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-[#8F171C] `}
+                                                        className={`block px-4 py-2 text-sm text-black hover:text-[#8F171C] transition-colors`}
+                                                        style={{ backgroundColor: 'transparent' }}
+                                                        onMouseEnter={(e) => {
+                                                            e.currentTarget.style.backgroundColor = '#ede7d6';
+                                                        }}
+                                                        onMouseLeave={(e) => {
+                                                            e.currentTarget.style.backgroundColor = 'transparent';
+                                                        }}
                                                     >
                                                         {subItem.label}
                                                         {subItem.comingSoon && <span className="text-xs text-black ml-2">(coming soon)</span>}
@@ -136,7 +146,7 @@ export default function Navigation() {
                 {/* Mobile menu panel */}
                 {
                     mobileMenuOpen && (
-                        <div className="md:hidden border-t border-gray-200">
+                        <div className="md:hidden border-t border-gray-200" style={{ backgroundColor: '#f5f1e8' }}>
                             <div className="px-2 pt-2 pb-3 space-y-1">
                                 {navItems.map((item) => (
                                     <div key={item.href}>
@@ -146,7 +156,7 @@ export default function Navigation() {
                                                     onClick={() => setMobileSubmenuOpen(
                                                         mobileSubmenuOpen === item.label ? null : item.label
                                                     )}
-                                                    className={`w-full text-left px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-gray-50 flex items-center justify-between `}
+                                                    className={`w-full text-left px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-amber-100 flex items-center justify-between `}
                                                 >
                                                     {item.label}
                                                     <svg
@@ -165,7 +175,7 @@ export default function Navigation() {
                                                                 key={subItem.href}
                                                                 href={subItem.href}
                                                                 onClick={() => setMobileMenuOpen(false)}
-                                                                className={`block px-3 py-2 text-base text-black hover:text-[#8F171C] hover:bg-gray-50 `}
+                                                                className={`block px-3 py-2 text-base text-black hover:text-[#8F171C] hover:bg-amber-100 `}
                                                             >
                                                                 {subItem.label}
                                                                 {subItem.comingSoon && <span className="text-xs text-black ml-2">(coming soon)</span>}
@@ -178,7 +188,7 @@ export default function Navigation() {
                                             <Link
                                                 href={item.href}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className={`block px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-gray-50 `}
+                                                className={`block px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-amber-100 `}
                                             >
                                                 {item.label}
                                             </Link>
