@@ -28,6 +28,16 @@ const alexBrush = Alex_Brush({
 export const metadata: Metadata = {
   title: "Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold",
   description: "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/img/favicons/20813-8-skull-photos_16x16.ico", sizes: "16x16", type: "image/x-icon" },
+      { url: "/img/favicons/20813-8-skull-photos_32x32.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/img/favicons/20813-8-skull-photos_48x48.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/img/favicons/20813-8-skull-photos_64x64.ico", sizes: "64x64", type: "image/x-icon" },
+    ],
+    apple: "/img/favicons/20813-8-skull-photos_64x64.ico",
+  },
 };
 
 export default function RootLayout({
