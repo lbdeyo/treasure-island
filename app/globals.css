@@ -16,7 +16,7 @@
 }
 
 .nav-dropdown-item:hover {
-  background-color: #ede7d6 !important;
+  background-color: #f5f1e8 !important;
 }
 
 /* More specific targeting for dropdown backgrounds */
@@ -30,7 +30,7 @@ div.absolute.left-0.mt-0.w-64.shadow-lg.border.border-gray-200.rounded-md div.py
 
 /* Target dropdown links specifically */
 div.absolute.left-0.mt-0.w-64 a.block.px-4.py-2:hover {
-  background-color: #ede7d6 !important;
+  background-color: #f5f1e8 !important;
 }
 
 /* Even more aggressive targeting */
