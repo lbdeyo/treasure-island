@@ -50,6 +50,13 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/wrt6vxk.css" />
         <link rel="preload" href="https://use.typekit.net/wrt6vxk.css" as="style" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicons/20813-8-skull-photos_16x16.ico" />
+        <link rel="icon" type="image/x-icon" sizes="32x32" href="/img/favicons/20813-8-skull-photos_32x32.ico" />
+        <link rel="icon" type="image/x-icon" sizes="48x48" href="/img/favicons/20813-8-skull-photos_48x48.ico" />
+        <link rel="icon" type="image/x-icon" sizes="64x64" href="/img/favicons/20813-8-skull-photos_64x64.ico" />
+        <link rel="apple-touch-icon" href="/img/favicons/20813-8-skull-photos_64x64.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${alikeAngular.variable} ${alexBrush.variable} antialiased`}
