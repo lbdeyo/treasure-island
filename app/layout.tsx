@@ -28,6 +28,25 @@ const alexBrush = Alex_Brush({
 export const metadata: Metadata = {
   title: "Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold",
   description: "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
+  openGraph: {
+    title: "Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold",
+    description: "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
+    images: [
+      {
+        url: "/img/treasure-island-home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Treasure Island Reimagined - Jane Hawkins and the Pirate's Gold",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold",
+    description: "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
+    images: ["/img/treasure-island-home.jpg"],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
