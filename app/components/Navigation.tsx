@@ -1,214 +1,248 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { useState } from 'react';
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function Navigation() {
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(
+    null
+  );
 
-    const navItems = [
+  const navItems = [
+    {
+      href: "/about",
+      label: "ABOUT",
+      submenu: [
+        { href: "/about", label: "About the play" },
+        { href: "/artistic-team", label: "Artistic Team" },
+      ],
+    },
+    { href: "/tour-dates", label: "TOUR DATES", comingSoon: true },
+    { href: "/store", label: "STORE", comingSoon: true },
+    { href: "/contact", label: "CONTACT" },
+    {
+      href: "/info-for-venues",
+      label: "INFO FOR VENUES",
+      submenu: [
+        { href: "/info-for-venues", label: "Tech Specs" },
+        { href: "/educational-materials", label: "Educational Materials" },
         {
-            href: '/about',
-            label: 'ABOUT',
-            submenu: [
-                { href: '/about', label: 'About the play' },
-                { href: '/artistic-team', label: 'Artistic Team' }
-            ]
+          href: "/marketing-manual",
+          label: "Marketing Manual",
+          comingSoon: true,
         },
-        { href: '/tour-dates', label: 'TOUR DATES', comingSoon: true },
-        { href: '/store', label: 'STORE', comingSoon: true },
-        { href: '/contact', label: 'CONTACT' },
-        {
-            href: '/info-for-venues',
-            label: 'INFO FOR VENUES',
-            submenu: [
-                { href: '/info-for-venues', label: 'Tech Specs' },
-                { href: '/educational-materials', label: 'Educational Materials' },
-                { href: '/marketing-manual', label: 'Marketing Manual', comingSoon: true },
-                { href: '/sample-video', label: 'Sample Video' }
-            ]
-        }
-    ];
+        { href: "/sample-video", label: "Sample Video" },
+      ],
+    },
+  ];
 
-    const handleMouseEnter = (label: string) => {
-        setOpenDropdown(label);
-    };
+  const handleMouseEnter = (label: string) => {
+    setOpenDropdown(label);
+  };
 
-    const handleMouseLeave = () => {
-        setOpenDropdown(null);
-    };
+  const handleMouseLeave = () => {
+    setOpenDropdown(null);
+  };
 
-    return (
-        <div className="w-full relative z-[100] border-b-2 border-black" >
-            <nav className="w-full bg-[url('/img/art/paper-light.jpg')]  bg-repeat">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
-                    <div className="flex items-center h-16">
-                        {/* Logo */}
-                        <Link href="/" className="flex items-center group">
-                            <Image
-                                src="/img/art/nav-logo.svg"
-                                alt="Treasure Island Reimagined Logo"
-                                width={48}
-                                height={48}
-                                className="h-12 w-auto group-hover:hidden"
-                                priority
-                            />
-                            <Image
-                                src="/img/art/nav-logo-hover.svg"
-                                alt="Treasure Island Reimagined Logo (hover)"
-                                width={48}
-                                height={48}
-                                className="h-12 w-auto hidden group-hover:block"
-                                priority
-                            />
-                        </Link>
+  return (
+    <div className="w-full relative z-[100] border-b-2 border-black">
+      <nav className="w-full bg-[url('/img/art/paper-light.jpg')]  bg-repeat">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
+          <div className="flex items-center h-16">
+            {/* Logo */}
+            <Link href="/" className="flex items-center group">
+              <Image
+                src="/img/art/nav-logo.svg"
+                alt="Treasure Island Reimagined Logo"
+                width={48}
+                height={48}
+                className="h-12 w-auto group-hover:hidden"
+                priority
+              />
+              <Image
+                src="/img/art/nav-logo-hover.svg"
+                alt="Treasure Island Reimagined Logo (hover)"
+                width={48}
+                height={48}
+                className="h-12 w-auto hidden group-hover:block"
+                priority
+              />
+            </Link>
 
-                        {/* Navigation Links */}
-                        <div className="hidden md:flex space-x-8 ml-8">
-                            {navItems.map((item) => (
-                                <div
-                                    key={item.href}
-                                    className="relative"
-                                    onMouseEnter={() => item.submenu && handleMouseEnter(item.label)}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    {item.submenu ? (
-                                        // Parent items with submenus - not clickable, just show dropdown
-                                        <button
-                                            className={`text-black hover:text-[#8F171C] px-3 py-2 text-base font-bold flex items-center cursor-default `}
-                                        >
-                                            {item.label}
-                                            <svg className="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                                            </svg>
-                                        </button>
-                                    ) : (
-                                        // Regular menu items - clickable links
-                                        <Link
-                                            href={item.href}
-                                            className={`text-black hover:text-[#8F171C] px-3 py-2 text-base font-bold flex items-center `}
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    )}
+            {/* Navigation Links */}
+            <div className="hidden md:flex space-x-8 ml-8">
+              {navItems.map((item) => (
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() =>
+                    item.submenu && handleMouseEnter(item.label)
+                  }
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {item.submenu ? (
+                    // Parent items with submenus - not clickable, just show dropdown
+                    <button
+                      className={`text-black hover:text-[#8F171C] px-3 py-2 text-base font-bold flex items-center cursor-default `}
+                    >
+                      {item.label}
+                      <svg
+                        className="ml-1 h-4 w-4"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  ) : (
+                    // Regular menu items - clickable links
+                    <Link
+                      href={item.href}
+                      className={`text-black hover:text-[#8F171C] px-3 py-2 text-base font-bold flex items-center `}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
 
-                                    {/* Dropdown Menu */}
-                                    {item.submenu && openDropdown === item.label && (
-                                        <div
-                                            className="absolute left-0 mt-0 w-64 shadow-lg border border-gray-200 rounded-md z-[200]"
-                                            style={{
-                                                backgroundImage: "url('/img/art/paper-light.jpg')",
-                                                backgroundRepeat: 'repeat',
-                                                backgroundSize: 'auto',
-                                                border: '1px solid #d1d5db'
-                                            }}
-                                        >
-                                            <div className="py-2" style={{
-                                                backgroundImage: "url('/img/art/paper-light.jpg')",
-                                                backgroundRepeat: 'repeat',
-                                                backgroundSize: 'auto'
-                                            }}>
-                                                {item.submenu.map((subItem) => (
-                                                    <Link
-                                                        key={subItem.href}
-                                                        href={subItem.href}
-                                                        className={`block px-4 py-2 text-sm text-black hover:text-[#8F171C] transition-colors`}
-                                                        style={{ backgroundColor: 'transparent' }}
-                                                        onMouseEnter={(e) => {
-                                                            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
-                                                        }}
-                                                        onMouseLeave={(e) => {
-                                                            e.currentTarget.style.backgroundColor = 'transparent';
-                                                        }}
-                                                    >
-                                                        {subItem.label}
-                                                        {subItem.comingSoon && <span className="text-xs text-black ml-2">(coming soon)</span>}
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Mobile menu button */}
-                        <div className="md:hidden ml-auto">
-                            <button
-                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                                className="text-black hover:text-black"
-                            >
-                                <span className="sr-only">Open main menu</span>
-                                <div className="w-6 h-6 flex flex-col justify-center">
-                                    <span className="block w-full h-0.5 bg-current mb-1"></span>
-                                    <span className="block w-full h-0.5 bg-current mb-1"></span>
-                                    <span className="block w-full h-0.5 bg-current"></span>
-                                </div>
-                            </button>
-                        </div>
+                  {/* Dropdown Menu */}
+                  {item.submenu && openDropdown === item.label && (
+                    <div
+                      className="absolute left-0 mt-0 w-64 shadow-lg border border-gray-200 rounded-md z-[200]"
+                      style={{
+                        backgroundImage: "url('/img/art/paper-light.jpg')",
+                        backgroundRepeat: "repeat",
+                        backgroundSize: "auto",
+                        border: "1px solid #d1d5db",
+                      }}
+                    >
+                      <div
+                        className="py-2"
+                        style={{
+                          backgroundImage: "url('/img/art/paper-light.jpg')",
+                          backgroundRepeat: "repeat",
+                          backgroundSize: "auto",
+                        }}
+                      >
+                        {item.submenu.map((subItem) => (
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            className={`block px-4 py-2 text-sm text-black hover:text-[#8F171C] transition-colors`}
+                            style={{ backgroundColor: "transparent" }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor =
+                                "rgba(255, 255, 255, 0.5)";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor =
+                                "transparent";
+                            }}
+                          >
+                            {subItem.label}
+                            {subItem.comingSoon && (
+                              <span className="text-xs text-black ml-2">
+                                (coming soon)
+                              </span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
+                  )}
                 </div>
+              ))}
+            </div>
 
-                {/* Mobile menu panel */}
-                {
-                    mobileMenuOpen && (
-                        <div className="md:hidden border-t border-gray-200 bg-[url('/img/art/paper-light.jpg')] bg-repeat">
-                            <div className="px-2 pt-2 pb-3 space-y-1">
-                                {navItems.map((item) => (
-                                    <div key={item.href}>
-                                        {item.submenu ? (
-                                            <div>
-                                                <button
-                                                    onClick={() => setMobileSubmenuOpen(
-                                                        mobileSubmenuOpen === item.label ? null : item.label
-                                                    )}
-                                                    className={`w-full text-left px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-[#f5f1e8] flex items-center justify-between `}
-                                                >
-                                                    {item.label}
-                                                    <svg
-                                                        className={`h-5 w-5 transform transition-transform ${mobileSubmenuOpen === item.label ? 'rotate-180' : ''
-                                                            }`}
-                                                        fill="currentColor"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                                                    </svg>
-                                                </button>
-                                                {mobileSubmenuOpen === item.label && (
-                                                    <div className="pl-4">
-                                                        {item.submenu.map((subItem) => (
-                                                            <Link
-                                                                key={subItem.href}
-                                                                href={subItem.href}
-                                                                onClick={() => setMobileMenuOpen(false)}
-                                                                className={`block px-3 py-2 text-base text-black hover:text-[#8F171C] hover:bg-[#f5f1e8] `}
-                                                            >
-                                                                {subItem.label}
-                                                                {subItem.comingSoon && <span className="text-xs text-black ml-2">(coming soon)</span>}
-                                                            </Link>
-                                                        ))}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ) : (
-                                            <Link
-                                                href={item.href}
-                                                onClick={() => setMobileMenuOpen(false)}
-                                                className={`block px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-[#f5f1e8] `}
-                                            >
-                                                {item.label}
-                                            </Link>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )
-                }
-            </nav>
+            {/* Mobile menu button */}
+            <div className="md:hidden ml-auto">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-black hover:text-black"
+              >
+                <span className="sr-only">Open main menu</span>
+                <div className="w-6 h-6 flex flex-col justify-center">
+                  <span className="block w-full h-0.5 bg-current mb-1"></span>
+                  <span className="block w-full h-0.5 bg-current mb-1"></span>
+                  <span className="block w-full h-0.5 bg-current"></span>
+                </div>
+              </button>
+            </div>
+          </div>
         </div>
-    );
+
+        {/* Mobile menu panel */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 bg-[url('/img/art/paper-light.jpg')] bg-repeat">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navItems.map((item) => (
+                <div key={item.href}>
+                  {item.submenu ? (
+                    <div>
+                      <button
+                        onClick={() =>
+                          setMobileSubmenuOpen(
+                            mobileSubmenuOpen === item.label ? null : item.label
+                          )
+                        }
+                        className={`w-full text-left px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-[#f5f1e8] flex items-center justify-between `}
+                      >
+                        {item.label}
+                        <svg
+                          className={`h-5 w-5 transform transition-transform ${
+                            mobileSubmenuOpen === item.label ? "rotate-180" : ""
+                          }`}
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                      {mobileSubmenuOpen === item.label && (
+                        <div className="pl-4">
+                          {item.submenu.map((subItem) => (
+                            <Link
+                              key={subItem.href}
+                              href={subItem.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className={`block px-3 py-2 text-base text-black hover:text-[#8F171C] hover:bg-[#f5f1e8] `}
+                            >
+                              {subItem.label}
+                              {subItem.comingSoon && (
+                                <span className="text-xs text-black ml-2">
+                                  (coming soon)
+                                </span>
+                              )}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-3 py-2 text-base font-bold text-black hover:text-[#8F171C] hover:bg-[#f5f1e8] `}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </nav>
+    </div>
+  );
 }
