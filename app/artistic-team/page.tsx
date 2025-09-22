@@ -117,7 +117,7 @@ export default async function ArtisticTeam() {
                           <div className="flex flex-col md:flex-row md:gap-6 mb-8">
                             <div className="mb-4 md:mb-0 md:flex-shrink-0">
                               <Image
-                                src="/img/jason-neulander.jpg"
+                                src="/img/jason-neulander-headshot-2026.jpg"
                                 alt="Jason Neulander"
                                 width={200}
                                 height={200}
@@ -262,7 +262,7 @@ export default async function ArtisticTeam() {
                     <div className="flex flex-col md:flex-row md:gap-6 mb-8">
                       <div className="mb-4 md:mb-0 md:flex-shrink-0">
                         <Image
-                          src="/img/jason-neulander.jpg"
+                          src="/img/jason-neulander-headshot-2026.jpg"
                           alt="Jason Neulander"
                           width={200}
                           height={200}
