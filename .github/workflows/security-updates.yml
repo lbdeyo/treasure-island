@@ -114,7 +114,7 @@ jobs:
         npm outdated --long || true
         
     - name: Upload outdated report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: outdated-packages-report
         path: outdated-report.md
