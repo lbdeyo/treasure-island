@@ -1,0 +1,121 @@
+# Security Updates workflow
+# Automatically handles security vulnerability updates with higher priority
+
+name: Security Updates
+
+on:
+  # Run on schedule to check for security updates
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  # Allow manual triggering
+  workflow_dispatch:
+  # Run on security advisories
+  repository_dispatch:
+    types: [security-advisory]
+
+jobs:
+  security-audit:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run security audit
+      id: audit
+      run: |
+        # Run audit and capture output
+        npm audit --audit-level=moderate --json > audit-results.json || true
+        
+        # Check if there are any vulnerabilities
+        VULN_COUNT=$(cat audit-results.json | jq '.metadata.vulnerabilities.total // 0')
+        echo "vulnerability-count=$VULN_COUNT" >> $GITHUB_OUTPUT
+        
+        # Display human-readable results
+        npm audit --audit-level=moderate || true
+    
+    - name: Create security issue
+      if: steps.audit.outputs.vulnerability-count > 0
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const auditResults = JSON.parse(fs.readFileSync('audit-results.json', 'utf8'));
+          
+          const title = `🚨 Security vulnerabilities detected (${auditResults.metadata.vulnerabilities.total} total)`;
+          const body = `
+          ## Security Audit Results
+          
+          **Total vulnerabilities:** ${auditResults.metadata.vulnerabilities.total}
+          - **Critical:** ${auditResults.metadata.vulnerabilities.critical || 0}
+          - **High:** ${auditResults.metadata.vulnerabilities.high || 0}
+          - **Moderate:** ${auditResults.metadata.vulnerabilities.moderate || 0}
+          - **Low:** ${auditResults.metadata.vulnerabilities.low || 0}
+          
+          ### Recommended Actions:
+          1. Review the vulnerabilities in the [Security tab](${context.payload.repository.html_url}/security/advisories)
+          2. Update affected packages using \`npm audit fix\`
+          3. For manual updates, check Dependabot PRs or create them manually
+          
+          ### Audit Command:
+          \`\`\`bash
+          npm audit --audit-level=moderate
+          npm audit fix
+          \`\`\`
+          
+          ---
+          *This issue was automatically created by the Security Updates workflow.*
+          `;
+          
+          // Check if issue already exists
+          const issues = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            labels: ['security', 'automated'],
+            state: 'open'
+          });
+          
+          if (issues.data.length === 0) {
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['security', 'automated', 'high-priority']
+            });
+          }
+
+  check-outdated:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Check for outdated packages
+      run: |
+        echo "## Outdated Packages Report" >> outdated-report.md
+        echo "" >> outdated-report.md
+        npm outdated --long || true
+        
+    - name: Upload outdated report
+      uses: actions/upload-artifact@v4
+      with:
+        name: outdated-packages-report
+        path: outdated-report.md
+        retention-days: 7

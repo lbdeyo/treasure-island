@@ -34,3 +34,29 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 🔒 Security & Automated Updates
+
+This project includes automated dependency updates and security monitoring:
+
+### Quick Security Commands
+```bash
+# Check for security vulnerabilities
+npm run security:audit
+
+# Fix security issues automatically
+npm run security:fix
+
+# Check for outdated packages
+npm run deps:check
+
+# Update all dependencies
+npm run deps:update
+```
+
+### Automated Systems
+- **Dependabot**: Weekly dependency updates with automatic security patches
+- **GitHub Actions**: Automated testing and security monitoring
+- **Security Alerts**: Immediate notifications for vulnerabilities
+
+For detailed information about the automated update system, see [`.github/DEPENDENCY_UPDATES.md`](.github/DEPENDENCY_UPDATES.md).
