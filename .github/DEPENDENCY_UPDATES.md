@@ -27,11 +27,16 @@ This repository is configured with automated dependency updates to ensure securi
 **Purpose**: Ensures dependency updates don't break the application
 
 **What it does:**
-- Runs on multiple Node.js versions (18.x, 20.x)
-- Installs dependencies and runs linting
+- Runs on multiple Node.js versions (20.x, 22.x)
+- Installs dependencies and runs ESLint linting
 - Builds the application to catch build errors
 - Performs security audit checks
 - Auto-approves and merges safe Dependabot PRs (patch updates)
+
+**Recent Updates:**
+- Migrated from deprecated `next lint` to ESLint CLI
+- Updated Node.js versions to 20.x and 22.x for better compatibility
+- Configured ESLint with warnings instead of errors for gradual improvement
 
 ### 2. Security Updates Workflow (`.github/workflows/security-updates.yml`)
 **Triggers**: Daily schedule, manual trigger, security advisories
@@ -127,17 +132,22 @@ ignore:
 ### Manual Commands:
 ```bash
 # Check for outdated packages
-npm outdated
+npm run deps:check
 
-# Update specific package
-npm update package-name
+# Update all dependencies
+npm run deps:update
 
 # Security audit
-npm audit
-npm audit fix
+npm run security:audit
+npm run security:fix
 
-# Install latest versions
-npm install package-name@latest
+# Linting
+npm run lint              # Lenient linting (allows warnings)
+npm run lint:strict       # Strict linting (fails on warnings)
+
+# Build and development
+npm run build
+npm run dev
 ```
 
 ## 📞 Support

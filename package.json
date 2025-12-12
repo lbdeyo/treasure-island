@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --max-warnings 100",
+    "lint:strict": "eslint .",
     "security:audit": "npm audit --audit-level=moderate",
     "security:fix": "npm audit fix",
     "deps:check": "npm outdated",
@@ -25,10 +26,13 @@
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^15.5.9",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
