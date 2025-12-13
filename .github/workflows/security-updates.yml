@@ -16,6 +16,10 @@ on:
 jobs:
   security-audit:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: read
     
     steps:
     - name: Checkout code
