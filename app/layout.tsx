@@ -25,7 +25,13 @@ const alexBrush = Alex_Brush({
   weight: ["400"],
 });
 
+// Use an environment variable so production OG/Twitter URLs are absolute.
+// Set NEXT_PUBLIC_SITE_URL in your env (e.g. https://treasure-island.example.com).
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold",
   description: "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
   openGraph: {
