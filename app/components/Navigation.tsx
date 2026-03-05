@@ -21,6 +21,7 @@ export default function Navigation() {
       ],
     },
     { href: "/tour-dates", label: "TOUR DATES", comingSoon: true },
+    { href: "/video", label: "VIDEO" },
     { href: "/store", label: "STORE", comingSoon: true },
     { href: "/contact", label: "CONTACT" },
     {
