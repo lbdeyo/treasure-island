@@ -21,7 +21,7 @@ export default async function About() {
                     {/* Page Header */}
                     <div className="relative max-w-3xl p-8 bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black">
                         <div className="relative z-20">
-                            <h1 className="mb-8 pt-8">{pageTitle}</h1>
+                            <h1 className="mb-8 pt-8 whitespace-pre-line">{pageTitle}</h1>
 
                             {/* Main Description */}
                             <div className="flex flex-col lg:flex-row lg:gap-12 lg:items-start">

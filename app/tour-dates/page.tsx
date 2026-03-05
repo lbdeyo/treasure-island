@@ -20,7 +20,7 @@ export default async function TourDates() {
                     <div className="space-y-8">
                         {/* Page Header */}
                         <div className="max-w-3xl pt-5">
-                            <h1 className="mb-8">{pageTitle}</h1>
+                            <h1 className="mb-8 whitespace-pre-line">{pageTitle}</h1>
                         </div>
 
                         {/* Content */}

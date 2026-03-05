@@ -19,7 +19,7 @@ export default async function Store() {
                 <div className="max-w-3xl bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black p-5">
                     {/* Page Header - Full Width */}
                     <div className="mb-8">
-                        <h1 className="pt-5 mb-8">{pageTitle}</h1>
+                        <h1 className="pt-5 mb-8 whitespace-pre-line">{pageTitle}</h1>
                     </div>
 
                     {/* Book and Content Layout */}

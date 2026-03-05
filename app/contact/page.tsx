@@ -21,7 +21,7 @@ export default async function Contact() {
           <div className="max-w-3xl bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black p-5">
             {/* Page Header */}
             <div>
-              <h1 className="mb-5 pt-5">{pageTitle}</h1>
+              <h1 className="mb-5 pt-5 whitespace-pre-line">{pageTitle}</h1>
             </div>
 
             {/* Content */}

@@ -20,7 +20,7 @@ export default async function InfoForVenues() {
                 <div className="max-w-3xl p-6 space-y-8 bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black">
                     {/* Page Header */}
                     <div className="max-w-3xl">
-                        <h1 className=" mb-8 pt-5">{pageTitle}</h1>
+                        <h1 className="mb-8 pt-5 whitespace-pre-line">{pageTitle}</h1>
                     </div>
 
                     {/* Content */}

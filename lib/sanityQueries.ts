@@ -86,6 +86,11 @@ export async function getPageContent(pageId: string): Promise<PageContent | null
     const content = await client.fetch(pageContentQuery, { pageId }, {
       next: { revalidate: 0 } // Disable caching for immediate updates
     })
+
+    if (content?.title) {
+      content.title = content.title.replace(/\\n/g, '\n')
+    }
+
     return content
   } catch (error) {
     console.error('Error fetching page content:', error)
@@ -99,6 +104,11 @@ export async function getPageTextContent(pageId: string): Promise<PageTextConten
     const content = await client.fetch(pageTextQuery, { pageId }, {
       next: { revalidate: 0 } // Disable caching for immediate updates
     })
+
+    if (content?.title) {
+      content.title = content.title.replace(/\\n/g, '\n')
+    }
+
     return content
   } catch (error) {
     console.error('Error fetching page text content:', error)

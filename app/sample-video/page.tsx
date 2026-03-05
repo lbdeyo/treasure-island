@@ -20,7 +20,7 @@ export default async function SampleVideo() {
                     <div className="relative max-w-3xl p-8 bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black">
 
                         <div className="relative z-20">
-                            <h1 className=" pt-5 " style={{ fontSize: '5rem' }}>{pageTitle}</h1>
+                            <h1 className="pt-5 whitespace-pre-line" style={{ fontSize: '5rem' }}>{pageTitle}</h1>
 
                             {/* Sanity Content or Fallback */}
                             {paragraphs.length > 0 ? (

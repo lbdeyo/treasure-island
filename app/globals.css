@@ -50,6 +50,17 @@ h1 {
   color: #8f181c;
 }
 
+/* Home page title: smaller on mobile, slightly smaller than global on desktop */
+h1.home-title {
+  font-size: 3.2rem;
+}
+
+@media (min-width: 1024px) {
+  h1.home-title {
+    font-size: 4rem;
+  }
+}
+
 /* Responsive line-height for h1 on larger screens */
 @media (min-width: 768px) {
   h1 {

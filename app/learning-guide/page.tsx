@@ -34,7 +34,7 @@ export default async function LearningGuide() {
           <div className="space-y-8">
             {/* Complete Learning Guide */}
             <div className="max-w-3xl bg-opacity-100 p-7">
-              <h1 className="mb-6 pt-5" style={{ fontSize: "5rem" }}>
+              <h1 className="mb-6 pt-5 whitespace-pre-line" style={{ fontSize: "5rem" }}>
                 {pageTitle}
               </h1>
               <p className="text-lg leading-relaxed mb-8">

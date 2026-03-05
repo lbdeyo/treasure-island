@@ -82,7 +82,7 @@ export default async function ArtisticTeam() {
             <div className="space-y-8 max-w-3xl p-5">
               {/* Page Header */}
               <div className="max-w-2xl mt-3">
-                <h1>{pageTitle}</h1>
+                <h1 className="whitespace-pre-line">{pageTitle}</h1>
               </div>
 
               {paragraphs.length > 0 ? (

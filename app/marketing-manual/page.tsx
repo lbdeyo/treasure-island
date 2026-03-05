@@ -19,7 +19,7 @@ export default async function MarketingManual() {
                     <div className="space-y-8">
                         {/* Page Header */}
                         <div className="max-w-3xl">
-                            <h1 className="pt-5 ">{pageTitle}</h1>
+                            <h1 className="pt-5 whitespace-pre-line">{pageTitle}</h1>
                         </div>
 
                         {/* Content */}
