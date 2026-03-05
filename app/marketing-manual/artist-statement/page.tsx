@@ -1,15 +1,12 @@
+import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import { getPageTextContent } from "@/lib/sanityQueries";
 import { basePortableTextComponents } from "@/lib/portableTextComponents";
 
-export default async function MarketingManual() {
-  // Fetch text content from Sanity
-  const textContent = await getPageTextContent("marketing-manual");
+export default async function ArtistStatementPage() {
+  const textContent = await getPageTextContent("marketing-artist-statement");
 
-  // Use Sanity title if available, otherwise fallback
-  const pageTitle = textContent?.title || "Marketing Materials";
-
-  // Get paragraphs from Sanity, sorted by order
+  const pageTitle = textContent?.title || "Artist Statement";
   const paragraphs = textContent?.paragraphs || [];
 
   return (
@@ -17,15 +14,20 @@ export default async function MarketingManual() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-3xl bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black p-5">
           <div className="space-y-8">
-            {/* Page Header */}
-            <div className="max-w-3xl">
-              <h1 className="pt-5 whitespace-pre-line">{pageTitle}</h1>
+            <div className="max-w-3xl relative">
+              <Link
+                href="/marketing-manual"
+                className="block mb-3 text-base text-[#8f181c] hover:underline relative z-20"
+              >
+                &larr; Back to Marketing Materials
+              </Link>
+              <h1 className="pt-5 mt-4 whitespace-pre-line relative z-10">
+                {pageTitle}
+              </h1>
             </div>
 
-            {/* Content */}
             <div className="max-w-3xl">
               {paragraphs.length > 0 ? (
-                // Render Sanity content
                 paragraphs.map((paragraph, index) => (
                   <div key={index}>
                     <PortableText
@@ -35,7 +37,6 @@ export default async function MarketingManual() {
                   </div>
                 ))
               ) : (
-                // Fallback content if no Sanity content
                 <p className="text-lg leading-relaxed">Coming soon.</p>
               )}
             </div>

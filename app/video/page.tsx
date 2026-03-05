@@ -26,9 +26,8 @@ export default function VideoPage() {
             <div className="relative z-20">
               <h1 className="pt-5 whitespace-pre-line">Video</h1>
               <p className="text-xl text-black pt-3 pb-6">
-                A selection of videos from{" "}
-                <strong>Treasure Island Reimagined: Jane Hawkins and the
-                Pirate&apos;s Gold</strong>.
+                Land ho! Glimpse through the spy-glass into dangerous and
+                uncharted terrain.
               </p>
 
               <div className="grid gap-8 md:grid-cols-2">
@@ -69,4 +68,3 @@ export default function VideoPage() {
     </div>
   );
 }
-

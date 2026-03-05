@@ -32,8 +32,7 @@ export default function Navigation() {
         { href: "/educational-materials", label: "Educational Materials" },
         {
           href: "/marketing-manual",
-          label: "Marketing Manual",
-          comingSoon: true,
+              label: "Marketing Materials",
         },
         { href: "/sample-video", label: "Sample Video" },
       ],
