@@ -4,6 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
+type NavSubItem = {
+  href: string;
+  label: string;
+  comingSoon?: boolean;
+};
+
+type NavItem = {
+  href: string;
+  label: string;
+  comingSoon?: boolean;
+  submenu?: NavSubItem[];
+};
+
 export default function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,7 +24,7 @@ export default function Navigation() {
     null
   );
 
-  const navItems = [
+  const navItems: NavItem[] = [
     {
       href: "/about",
       label: "ABOUT",
