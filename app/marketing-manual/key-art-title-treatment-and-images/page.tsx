@@ -13,7 +13,7 @@ export default async function KeyArtTitleTreatmentAndImagesPage() {
   const paragraphs = textContent?.paragraphs || [];
 
   return (
-    <div className="bg-[url('/img/art/marketing-manual-bg.jpg')] bg-cover bg-top bg-repeat min-h-screen">
+    <div className="bg-[url('/img/art/skeletons.jpg')] bg-cover bg-top bg-repeat min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-3xl bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black p-5">
           <div className="space-y-8">
