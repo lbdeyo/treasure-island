@@ -36,10 +36,18 @@ export interface PageTextContent {
     pageId: string
     title: string
     paragraphs: Paragraph[]
+    videos?: Video[]
 }
 
 export interface Paragraph {
     content: any[] // Rich text content from Sanity
+    order: number
+}
+
+export interface Video {
+    _key?: string
+    title?: string
+    youtubeIdOrUrl: string
     order: number
 }
 
@@ -75,6 +83,12 @@ const pageTextQuery = `
     title,
     paragraphs[] {
       content,
+      order
+    } | order(order asc),
+    videos[] {
+      _key,
+      youtubeIdOrUrl,
+      title,
       order
     } | order(order asc)
   }

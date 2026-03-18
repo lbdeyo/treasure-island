@@ -27,16 +27,17 @@ const alexBrush = Alex_Brush({
 
 // Use an environment variable so production OG/Twitter URLs are absolute.
 // Set NEXT_PUBLIC_SITE_URL in your env (e.g. https://treasure-island.example.com).
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold",
-  description: "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
+  description:
+    "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
   openGraph: {
     title: "Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold",
-    description: "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
+    description:
+      "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
     images: [
       {
         url: "/img/treasure-island-home.jpg",
@@ -50,16 +51,33 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Treasure Island Reimagined: Jane Hawkins and the Pirate's Gold",
-    description: "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
+    description:
+      "A new stage adaptation of the classic novel featuring Jane Hawkins and the Pirate's Gold",
     images: ["/img/treasure-island-home.jpg"],
   },
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/img/favicons/20813-8-skull-photos_16x16.ico", sizes: "16x16", type: "image/x-icon" },
-      { url: "/img/favicons/20813-8-skull-photos_32x32.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/img/favicons/20813-8-skull-photos_48x48.ico", sizes: "48x48", type: "image/x-icon" },
-      { url: "/img/favicons/20813-8-skull-photos_64x64.ico", sizes: "64x64", type: "image/x-icon" },
+      {
+        url: "/img/favicons/20813-8-skull-photos_16x16.ico",
+        sizes: "16x16",
+        type: "image/x-icon",
+      },
+      {
+        url: "/img/favicons/20813-8-skull-photos_32x32.ico",
+        sizes: "32x32",
+        type: "image/x-icon",
+      },
+      {
+        url: "/img/favicons/20813-8-skull-photos_48x48.ico",
+        sizes: "48x48",
+        type: "image/x-icon",
+      },
+      {
+        url: "/img/favicons/20813-8-skull-photos_64x64.ico",
+        sizes: "64x64",
+        type: "image/x-icon",
+      },
     ],
     apple: "/img/favicons/20813-8-skull-photos_64x64.ico",
   },
@@ -74,14 +92,47 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/wrt6vxk.css" />
-        <link rel="preload" href="https://use.typekit.net/wrt6vxk.css" as="style" />
+        <link
+          rel="preload"
+          href="https://use.typekit.net/wrt6vxk.css"
+          as="style"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="64x64"
+          href="/img/favicons/20813-8-skull-photos_64x64.ico"
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicons/20813-8-skull-photos_16x16.ico" />
-        <link rel="icon" type="image/x-icon" sizes="32x32" href="/img/favicons/20813-8-skull-photos_32x32.ico" />
-        <link rel="icon" type="image/x-icon" sizes="48x48" href="/img/favicons/20813-8-skull-photos_48x48.ico" />
-        <link rel="icon" type="image/x-icon" sizes="64x64" href="/img/favicons/20813-8-skull-photos_64x64.ico" />
-        <link rel="apple-touch-icon" href="/img/favicons/20813-8-skull-photos_64x64.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          sizes="16x16"
+          href="/img/favicons/20813-8-skull-photos_16x16.ico"
+        />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          sizes="32x32"
+          href="/img/favicons/20813-8-skull-photos_32x32.ico"
+        />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          sizes="48x48"
+          href="/img/favicons/20813-8-skull-photos_48x48.ico"
+        />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          sizes="64x64"
+          href="/img/favicons/20813-8-skull-photos_64x64.ico"
+        />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body

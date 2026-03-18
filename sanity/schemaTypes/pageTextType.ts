@@ -60,6 +60,39 @@ export const pageTextType = defineType({
             ],
             description: 'Add paragraphs of text content that will be displayed in order'
         }),
+        defineField({
+            name: 'videos',
+            title: 'Videos',
+            type: 'array',
+            description:
+                'Optional list of videos for pages like the Video page. Add YouTube URLs or YouTube IDs.',
+            of: [
+                {
+                    type: 'object',
+                    name: 'youtubeVideo',
+                    title: 'YouTube Video',
+                    fields: [
+                        defineField({
+                            name: 'youtubeIdOrUrl',
+                            title: 'YouTube ID or URL',
+                            type: 'string',
+                            validation: (rule) => rule.required(),
+                        }),
+                        defineField({
+                            name: 'title',
+                            title: 'Caption / Title',
+                            type: 'string',
+                        }),
+                        defineField({
+                            name: 'order',
+                            title: 'Display Order',
+                            type: 'number',
+                            validation: (rule) => rule.required().min(1),
+                        }),
+                    ],
+                },
+            ],
+        }),
     ],
     preview: {
         select: {

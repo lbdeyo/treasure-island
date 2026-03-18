@@ -1,20 +1,9 @@
 export const apiVersion =
   process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2025-08-19'
 
-export const dataset = assertValue(
-  process.env.NEXT_PUBLIC_SANITY_DATASET,
-  'Missing environment variable: NEXT_PUBLIC_SANITY_DATASET'
-)
+// Defaults match `lib/sanity.ts` so local Studio can run without requiring
+// env vars (you can still override these via .env.local).
+export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production'
 
-export const projectId = assertValue(
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  'Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID'
-)
-
-function assertValue<T>(v: T | undefined, errorMessage: string): T {
-  if (v === undefined) {
-    throw new Error(errorMessage)
-  }
-
-  return v
-}
+export const projectId =
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'jupljhqb'
