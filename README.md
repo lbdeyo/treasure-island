@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## 🔒 Security & Automated Updates
 
-This project includes automated dependency updates and security monitoring:
+This project includes npm scripts for dependency checks and GitHub Actions for CI and security monitoring:
 
 ### Quick Security Commands
 ```bash
@@ -55,8 +55,7 @@ npm run deps:update
 ```
 
 ### Automated Systems
-- **Dependabot**: Weekly dependency updates with automatic security patches
-- **GitHub Actions**: Automated testing and security monitoring
-- **Security Alerts**: Immediate notifications for vulnerabilities
+- **GitHub Actions**: CI runs lint and build on pushes and pull requests (see `.github/workflows/ci.yml`)
+- **Security Alerts**: Configure in your GitHub repository **Settings → Security**
 
-For detailed information about the automated update system, see [`.github/DEPENDENCY_UPDATES.md`](.github/DEPENDENCY_UPDATES.md).
+Dependency updates are manual: use `npm run deps:check` / `npm run deps:update` and `npm run security:audit` as needed.
