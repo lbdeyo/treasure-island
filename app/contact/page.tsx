@@ -26,58 +26,60 @@ export default async function Contact() {
 
             {/* Content */}
             <div>
-              {paragraphs.length > 0 ? (
-                // Render Sanity content
-                paragraphs.map((paragraph, index) => (
-                  <div key={index}>
-                    <PortableText
-                      value={paragraph.content}
-                      components={basePortableTextComponents}
-                    />
-                  </div>
-                ))
-              ) : (
-                // Fallback content if no Sanity content
-                <>
-                  {/* Production Information */}
-                  <div className="mb-6">
-                    <h2 className="text-2xl font-bold mb-4">
-                      For information about the production:
-                    </h2>
-                    <p className="text-lg leading-relaxed">
-                      Jason Neulander |{" "}
-                      <a href="tel:+15127399769">512-739-9769</a> |{" "}
-                      <a href="mailto:jason@theplanetzygon.com">
-                        jason@theplanetzygon.com
-                      </a>
-                    </p>
-                  </div>
-
-                  {/* Tour Bookings */}
-                  <div className="mb-8">
-                    <h2 className="text-2xl font-bold mb-4">
-                      For tour bookings:
-                    </h2>
-                    <div className="space-y-2">
+              <NewsletterSignup />
+              <div className="mt-8 border-t border-black/20 pt-6">
+                {paragraphs.length > 0 ? (
+                  // Render Sanity content
+                  paragraphs.map((paragraph, index) => (
+                    <div key={index}>
+                      <PortableText
+                        value={paragraph.content}
+                        components={basePortableTextComponents}
+                      />
+                    </div>
+                  ))
+                ) : (
+                  // Fallback content if no Sanity content
+                  <>
+                    {/* Production Information */}
+                    <div className="mb-6">
+                      <h2 className="text-2xl font-bold mb-4">
+                        For information about the production:
+                      </h2>
                       <p className="text-lg leading-relaxed">
-                        Simon Shaw |{" "}
-                        <a href="tel:+19173926739">(917) 392-6739</a> |{" "}
-                        <a href="mailto:simon@shawentertainment.com">
-                          simon@shawentertainment.com
-                        </a>
-                      </p>
-                      <p className="text-lg leading-relaxed">
-                        Sherri Leathers |{" "}
-                        <a href="tel:+16155006922">(615) 500-6922</a> |{" "}
-                        <a href="mailto:sherri@shawentertainment.com">
-                          sherri@shawentertainment.com
+                        Jason Neulander |{" "}
+                        <a href="tel:+15127399769">512-739-9769</a> |{" "}
+                        <a href="mailto:jason@theplanetzygon.com">
+                          jason@theplanetzygon.com
                         </a>
                       </p>
                     </div>
-                  </div>
-                </>
-              )}
-              <NewsletterSignup />
+
+                    {/* Tour Bookings */}
+                    <div className="mb-8">
+                      <h2 className="text-2xl font-bold mb-4">
+                        For tour bookings:
+                      </h2>
+                      <div className="space-y-2">
+                        <p className="text-lg leading-relaxed">
+                          Simon Shaw |{" "}
+                          <a href="tel:+19173926739">(917) 392-6739</a> |{" "}
+                          <a href="mailto:simon@shawentertainment.com">
+                            simon@shawentertainment.com
+                          </a>
+                        </p>
+                        <p className="text-lg leading-relaxed">
+                          Sherri Leathers |{" "}
+                          <a href="tel:+16155006922">(615) 500-6922</a> |{" "}
+                          <a href="mailto:sherri@shawentertainment.com">
+                            sherri@shawentertainment.com
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </div>
 

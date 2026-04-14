@@ -57,7 +57,7 @@ export default function NewsletterSignup() {
   }
 
   return (
-    <div className="mt-8 border-t border-black/20 pt-6">
+    <div>
       <h2 className="text-2xl font-bold mb-4">Jump aboard!</h2>
       <p className="mb-4 text-lg">
         Ahoy, mateys! Add yer name for an occasional message in a bottle.
