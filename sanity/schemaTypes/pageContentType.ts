@@ -9,7 +9,7 @@ export const pageContentType = defineType({
             name: 'pageId',
             title: 'Page ID',
             type: 'string',
-            description: 'Unique identifier for the page (e.g., "about", "contact", "tour-dates")',
+            description: 'Unique identifier for the page (e.g., "about", "contact", "performance-dates")',
             validation: (rule) => rule.required(),
         }),
         defineField({

@@ -33,7 +33,7 @@ export default function Navigation() {
         { href: "/artistic-team", label: "Artistic Team" },
       ],
     },
-    { href: "/tour-dates", label: "TOUR DATES", comingSoon: true },
+    { href: "/performance-dates", label: "PERFORMANCE DATES", comingSoon: true },
     { href: "/video", label: "VIDEO" },
     { href: "/store", label: "STORE", comingSoon: true },
     { href: "/contact", label: "CONTACT" },
