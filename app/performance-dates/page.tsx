@@ -1,10 +1,8 @@
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
 import { alamoSerialShows } from "@/lib/alamoSerialShows";
 import { getPageTextContent } from "@/lib/sanityQueries";
-import { basePortableTextComponents } from "@/lib/portableTextComponents";
 
-const defaultIntro =
+const alamoSerialIntro =
   "This summer, leading up to the premiere of the full show, we are rolling out the Jane Hawkins live-action graphic novel in serialized form, performing short chapters before classic adventure movies at the Alamo Drafthouse Cinema Mueller Location in Austin. Click on the movie poster images below for tickets!";
 
 export default async function PerformanceDates() {
@@ -13,8 +11,6 @@ export default async function PerformanceDates() {
     (await getPageTextContent("tour-dates"));
 
   const pageTitle = textContent?.title || "Performance Dates";
-
-  const paragraphs = textContent?.paragraphs || [];
 
   return (
     <div className="bg-[url('/img/art/tour-dates-bg.jpg')] bg-cover min-h-screen min-w-full">
@@ -37,21 +33,6 @@ export default async function PerformanceDates() {
                   Tickets available in June!
                 </p>
               </div>
-
-              <div className="max-w-3xl mx-auto">
-                {paragraphs.length > 0 ? (
-                  paragraphs.map((paragraph, index) => (
-                    <div key={index}>
-                      <PortableText
-                        value={paragraph.content}
-                        components={basePortableTextComponents}
-                      />
-                    </div>
-                  ))
-                ) : (
-                  <p className="text-lg leading-relaxed mb-6">{defaultIntro}</p>
-                )}
-              </div>
             </div>
 
             <section
@@ -59,6 +40,9 @@ export default async function PerformanceDates() {
               className="pt-2"
             >
               <h2 className="sr-only">Alamo Drafthouse screenings</h2>
+              <p className="text-lg leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10">
+                {alamoSerialIntro}
+              </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-12 list-none p-0 m-0">
                 {alamoSerialShows.map((show) => (
                   <li
