@@ -1,9 +1,38 @@
 import Image from "next/image";
+import { PortableText } from "@portabletext/react";
 import { alamoSerialShows } from "@/lib/alamoSerialShows";
 import { getPageTextContent } from "@/lib/sanityQueries";
+import {
+  performanceDatesIntroPortableTextComponents,
+  performanceDatesPremierePortableTextComponents,
+} from "@/lib/portableTextComponents";
 
-const alamoSerialIntro =
-  "This summer, leading up to the premiere of the full show, we are rolling out the Jane Hawkins live-action graphic novel in serialized form, performing short chapters before classic adventure movies at the Alamo Drafthouse Cinema Mueller Location in Austin. Click on the movie poster images below for tickets!";
+function PerformanceDatesIntroFallback() {
+  return (
+    <>
+      <p className="mb-8 max-w-xl text-left text-lg sm:text-xl leading-tight">
+        <span className="text-xl sm:text-2xl font-semibold tracking-tight">
+          World Premiere
+        </span>
+        <br />
+        September 18–20
+        <br />
+        State Theatre
+        <br />
+        Austin, Texas
+        <br />
+        <span className="font-medium">Tickets available in June!</span>
+      </p>
+      <p className="text-lg leading-relaxed mb-8 sm:mb-10">
+        This summer, leading up to the premiere of the full show, we are rolling
+        out the Jane Hawkins live-action graphic novel in serialized form,
+        performing short chapters before classic adventure movies at the Alamo
+        Drafthouse Cinema Mueller Location in Austin. Click on the movie poster
+        images below for tickets!
+      </p>
+    </>
+  );
+}
 
 export default async function PerformanceDates() {
   const textContent =
@@ -11,6 +40,7 @@ export default async function PerformanceDates() {
     (await getPageTextContent("tour-dates"));
 
   const pageTitle = textContent?.title || "Performance Dates";
+  const paragraphs = textContent?.paragraphs ?? [];
 
   return (
     <div className="bg-[url('/img/art/tour-dates-bg.jpg')] bg-cover bg-top bg-repeat min-h-screen">
@@ -20,25 +50,30 @@ export default async function PerformanceDates() {
             <div className="relative z-20">
               <h1 className="mb-8 pt-5 whitespace-pre-line">{pageTitle}</h1>
 
-              <p className="mb-8 max-w-xl text-left text-lg sm:text-xl leading-tight">
-                <span className="text-xl sm:text-2xl font-semibold tracking-tight">
-                  World Premiere
-                </span>
-                <br />
-                September 18–20
-                <br />
-                State Theatre
-                <br />
-                Austin, Texas
-                <br />
-                <span className="font-medium">Tickets available in June!</span>
-              </p>
+              {paragraphs.length > 0
+                ? paragraphs.map((paragraph, index) => (
+                    <div
+                      key={paragraph.order ?? index}
+                      className={
+                        index === 0
+                          ? "mb-8 max-w-xl text-left text-lg sm:text-xl leading-tight"
+                          : "mb-8 sm:mb-10"
+                      }
+                    >
+                      <PortableText
+                        value={paragraph.content}
+                        components={
+                          index === 0
+                            ? performanceDatesPremierePortableTextComponents
+                            : performanceDatesIntroPortableTextComponents
+                        }
+                      />
+                    </div>
+                  ))
+                : <PerformanceDatesIntroFallback />}
 
               <section aria-label="Alamo Drafthouse serial chapter screenings">
                 <h2 className="sr-only">Alamo Drafthouse screenings</h2>
-                <p className="text-lg leading-relaxed mb-8 sm:mb-10">
-                  {alamoSerialIntro}
-                </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-12 list-none p-0 m-0">
                   {alamoSerialShows.map((show) => (
                     <li

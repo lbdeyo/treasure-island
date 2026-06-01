@@ -104,6 +104,31 @@ export const artisticTeamPortableTextComponents = {
     },
 }
 
+// Performance dates — premiere block (first paragraph) and intro (following paragraphs)
+export const performanceDatesPremierePortableTextComponents = {
+    ...basePortableTextComponents,
+    block: {
+        ...basePortableTextComponents.block,
+        normal: ({ children }: any) => <p>{children}</p>,
+    },
+    marks: {
+        ...basePortableTextComponents.marks,
+        strong: ({ children }: any) => (
+            <span className="text-xl sm:text-2xl font-semibold tracking-tight">{children}</span>
+        ),
+    },
+}
+
+export const performanceDatesIntroPortableTextComponents = {
+    ...basePortableTextComponents,
+    block: {
+        ...basePortableTextComponents.block,
+        normal: ({ children }: any) => (
+            <p className="text-lg leading-relaxed">{children}</p>
+        ),
+    },
+}
+
 // Sample video specific components (for password and credits styling)
 export const sampleVideoPortableTextComponents = {
     ...basePortableTextComponents,
