@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react";
 import { getPageTextContent } from "@/lib/sanityQueries";
 import { basePortableTextComponents } from "@/lib/portableTextComponents";
 import NewsletterSignup from "@/app/components/NewsletterSignup";
+import SocialLinks from "@/app/components/SocialLinks";
 
 export default async function Contact() {
   // Fetch text content from Sanity
@@ -22,6 +23,7 @@ export default async function Contact() {
             {/* Page Header */}
             <div>
               <h1 className="mb-5 pt-5 whitespace-pre-line">{pageTitle}</h1>
+              <SocialLinks className="mb-6" />
             </div>
 
             {/* Content */}

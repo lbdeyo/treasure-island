@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react";
 import { getPageTextContent } from "@/lib/sanityQueries";
 import { homePortableTextComponents } from "@/lib/portableTextComponents";
 import NewsletterModal from "@/app/components/NewsletterModal";
+import SocialLinks from "@/app/components/SocialLinks";
 
 export default async function Home() {
   // Fetch text content from Sanity
@@ -72,6 +73,7 @@ export default async function Home() {
                     </p>
                   </>
                 )}
+                <SocialLinks className="mt-6" />
               </div>
             </div>
           </div>
