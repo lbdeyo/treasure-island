@@ -38,12 +38,13 @@ export const tourDateType = defineType({
       type: "string",
       options: {
         list: [
+          { title: "Not yet on sale", value: "comingSoon" },
           { title: "On sale", value: "onSale" },
           { title: "Sold out", value: "soldOut" },
         ],
         layout: "radio",
       },
-      initialValue: "onSale",
+      initialValue: "comingSoon",
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -51,7 +52,7 @@ export const tourDateType = defineType({
       title: "Ticketing link",
       type: "url",
       description: "Shown as a Buy Tickets button when the show is on sale.",
-      hidden: ({ parent }) => parent?.ticketStatus === "soldOut",
+      hidden: ({ parent }) => parent?.ticketStatus !== "onSale",
       validation: (rule) =>
         rule.uri({
           scheme: ["http", "https"],
@@ -78,10 +79,15 @@ export const tourDateType = defineType({
       ticketStatus: "ticketStatus",
     },
     prepare({ title, city, venue, ticketStatus }) {
-      const status = ticketStatus === "soldOut" ? "Sold out" : "On sale";
+      const statusLabel =
+        ticketStatus === "soldOut"
+          ? "Sold out"
+          : ticketStatus === "onSale"
+            ? "On sale"
+            : "Not yet on sale";
       return {
         title: title || "Untitled date",
-        subtitle: [city, venue, status].filter(Boolean).join(" · "),
+        subtitle: [city, venue, statusLabel].filter(Boolean).join(" · "),
       };
     },
   },

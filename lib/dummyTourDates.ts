@@ -22,6 +22,6 @@ export const dummyTourDates: TourDate[] = [
     dateLabel: "January 15, 2027",
     city: "Seattle, WA",
     venue: "Seattle Rep",
-    ticketStatus: "onSale",
+    ticketStatus: "comingSoon",
   },
 ];

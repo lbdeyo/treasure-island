@@ -111,7 +111,7 @@ export interface TourDate {
   dateLabel: string
   city: string
   venue: string
-  ticketStatus: 'onSale' | 'soldOut'
+  ticketStatus: 'comingSoon' | 'onSale' | 'soldOut'
   ticketUrl?: string
 }
 

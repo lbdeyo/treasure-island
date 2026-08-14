@@ -59,7 +59,8 @@ export default function TourDatesTable({ dates }: TourDatesTableProps) {
           <tbody>
             {dates.map((show) => {
               const isSoldOut = show.ticketStatus === "soldOut";
-              const ticketUrl = show.ticketUrl?.trim();
+              const ticketUrl =
+                show.ticketStatus === "onSale" ? show.ticketUrl?.trim() : "";
 
               return (
                 <tr key={show._id} className="border-b border-black/20">
