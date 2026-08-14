@@ -109,12 +109,31 @@ export const performanceDatesPremierePortableTextComponents = {
     ...basePortableTextComponents,
     block: {
         ...basePortableTextComponents.block,
-        normal: ({ children }: any) => <p>{children}</p>,
+        h2: ({ children }: any) => (
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight mb-3 text-center">
+                {children}
+            </h2>
+        ),
+        normal: ({ children }: any) => (
+            <p className="text-center text-lg sm:text-xl leading-snug whitespace-pre-line mb-0">
+                {children}
+            </p>
+        ),
     },
     marks: {
         ...basePortableTextComponents.marks,
         strong: ({ children }: any) => (
-            <span className="text-xl sm:text-2xl font-semibold tracking-tight">{children}</span>
+            <span className="font-semibold tracking-tight">{children}</span>
+        ),
+        link: ({ children, value }: any) => (
+            <a
+                href={value.href}
+                className="text-[#8f181c] font-medium hover:underline"
+                target={value.href?.startsWith("http") ? "_blank" : undefined}
+                rel={value.href?.startsWith("http") ? "noopener noreferrer" : undefined}
+            >
+                {children}
+            </a>
         ),
     },
 }

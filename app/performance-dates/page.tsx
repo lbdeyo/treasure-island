@@ -10,19 +10,17 @@ import {
 function PerformanceDatesIntroFallback() {
   return (
     <>
-      <p className="mb-8 max-w-xl text-left text-lg sm:text-xl leading-tight">
-        <span className="text-xl sm:text-2xl font-semibold tracking-tight">
-          World Premiere
-        </span>
-        <br />
-        September 18–20
-        <br />
-        State Theatre
-        <br />
-        Austin, Texas
-        <br />
-        <span className="font-medium">Tickets available in June!</span>
-      </p>
+      <div className="mb-8 text-center text-lg sm:text-xl leading-snug">
+        <h2 className="text-xl sm:text-2xl font-semibold tracking-tight mb-3">
+          Land ho! We pillage this fall!
+        </h2>
+        <p className="whitespace-pre-line">
+          {`World Premiere September 18-20
+State Theatre
+Austin, Texas
+Tickets here!`}
+        </p>
+      </div>
       <p className="text-lg leading-relaxed mb-8 sm:mb-10">
         This summer, leading up to the premiere of the full show, we are rolling
         out the Jane Hawkins live-action graphic novel in serialized form,
@@ -56,7 +54,7 @@ export default async function PerformanceDates() {
                       key={paragraph.order ?? index}
                       className={
                         index === 0
-                          ? "mb-8 max-w-xl text-left text-lg sm:text-xl leading-tight"
+                          ? "mb-8 text-center text-lg sm:text-xl leading-snug"
                           : "mb-8 sm:mb-10"
                       }
                     >
