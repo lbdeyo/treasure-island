@@ -1,4 +1,5 @@
 import { client } from './sanity'
+import { dummyTourDates } from './dummyTourDates'
 
 // Define types for our page content
 export interface PageContent {
@@ -93,6 +94,45 @@ const pageTextQuery = `
     } | order(order asc)
   }
 `
+
+const tourDatesQuery = `
+  *[_type == "tourDate"] | order(sortDate asc) {
+    _id,
+    dateLabel,
+    city,
+    venue,
+    ticketStatus,
+    ticketUrl
+  }
+`
+
+export interface TourDate {
+  _id: string
+  dateLabel: string
+  city: string
+  venue: string
+  ticketStatus: 'onSale' | 'soldOut'
+  ticketUrl?: string
+}
+
+export async function getTourDates(): Promise<TourDate[]> {
+  try {
+    const dates = await client.fetch(tourDatesQuery, {}, {
+      next: { revalidate: 0 }
+    })
+    if (Array.isArray(dates) && dates.length > 0) {
+      return dates
+    }
+  } catch (error) {
+    console.error('Error fetching tour dates:', error)
+  }
+
+  if (process.env.NODE_ENV === 'development') {
+    return dummyTourDates
+  }
+
+  return []
+}
 
 // Function to fetch page content
 export async function getPageContent(pageId: string): Promise<PageContent | null> {

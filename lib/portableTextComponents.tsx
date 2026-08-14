@@ -104,7 +104,7 @@ export const artisticTeamPortableTextComponents = {
     },
 }
 
-// Performance dates — premiere block (first paragraph) and intro (following paragraphs)
+// Performance dates — centered premiere copy
 export const performanceDatesPremierePortableTextComponents = {
     ...basePortableTextComponents,
     block: {
@@ -134,16 +134,6 @@ export const performanceDatesPremierePortableTextComponents = {
             >
                 {children}
             </a>
-        ),
-    },
-}
-
-export const performanceDatesIntroPortableTextComponents = {
-    ...basePortableTextComponents,
-    block: {
-        ...basePortableTextComponents.block,
-        normal: ({ children }: any) => (
-            <p className="text-lg leading-relaxed">{children}</p>
         ),
     },
 }
