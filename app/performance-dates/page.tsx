@@ -40,20 +40,19 @@ export default async function PerformanceDates() {
   const showFeaturedPerformance = featuredParagraphs.length > 0;
 
   return (
-    <div className="bg-[url('/img/art/tour-dates-bg.jpg')] bg-cover bg-top bg-repeat min-h-screen">
+    <div className="bg-[url('/img/hispaniola.jpg')] bg-cover bg-center bg-no-repeat bg-fixed min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="space-y-6">
-          <Image
-            src="/img/treasure-island-paramount-stage.jpg"
-            alt="Jason Neulander, Cheyenne Gibbs, and Dane Parker performing Treasure Island Reimagined"
-            width={3080}
-            height={1380}
-            priority
-            className="w-full max-w-3xl h-auto border-3 border-black"
-          />
-          <div className="relative max-w-3xl p-8 bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black">
+        <div className="relative max-w-3xl p-8 bg-[url('/img/art/paper-light.jpg')] bg-cover border-3 border-black">
             <div className="relative z-20">
-              <h1 className="mb-8 pt-5 whitespace-pre-line">{pageTitle}</h1>
+              <Image
+                src="/img/treasure-island-paramount-stage.jpg"
+                alt="Jason Neulander, Cheyenne Gibbs, and Dane Parker performing Treasure Island Reimagined"
+                width={3080}
+                height={1380}
+                priority
+                className="mb-8 w-full h-auto"
+              />
+              <h1 className="mb-8 whitespace-pre-line">{pageTitle}</h1>
 
               {showFeaturedPerformance && (
                 <section aria-label="Featured performance">
@@ -75,7 +74,6 @@ export default async function PerformanceDates() {
 
               <TourDatesTable dates={tourDates} />
             </div>
-          </div>
         </div>
       </div>
     </div>
