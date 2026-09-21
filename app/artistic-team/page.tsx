@@ -243,8 +243,52 @@ export default async function ArtisticTeam() {
                           </div>
                         </div>
                       )}
+                      {index === 6 && (
+                        // Cheyenne Gibbs
+                        <div className="max-w-3xl my-16">
+                          <div className="flex flex-col md:flex-row md:gap-6 mb-8">
+                            <div className="mb-4 md:mb-0 md:flex-shrink-0">
+                              <Image
+                                src="/img/cheyenne-gibbs.jpg"
+                                alt="Cheyenne Gibbs"
+                                width={200}
+                                height={200}
+                                className="object-cover mt-3"
+                              />
+                            </div>
+                            <div>
+                              <PortableText
+                                value={paragraph.content}
+                                components={artisticTeamPortableTextComponents}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      {index === 7 && (
+                        // Dane Parker
+                        <div className="max-w-3xl my-16">
+                          <div className="flex flex-col md:flex-row md:gap-6 mb-8">
+                            <div className="mb-4 md:mb-0 md:flex-shrink-0">
+                              <Image
+                                src="/img/dane-parker.jpeg"
+                                alt="Dane Parker"
+                                width={200}
+                                height={200}
+                                className="object-cover mt-3"
+                              />
+                            </div>
+                            <div>
+                              <PortableText
+                                value={paragraph.content}
+                                components={artisticTeamPortableTextComponents}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      )}
                       {/* For any additional paragraphs without specific team member images */}
-                      {index > 5 && (
+                      {index > 7 && (
                         <div className="max-w-3xl my-16">
                           <PortableText
                             value={paragraph.content}
